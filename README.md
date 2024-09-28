@@ -2,6 +2,6 @@
 
 # Objetivo General
 
-Desarrollar una aplicación móvil centrada en el paciente para el hospital, con el fin de mejorar la comunicación, aumentar el acceso a la información médica, fortalecer los lazos con la comunidad y optimizar la eficiencia en la prestación de servicios de atención médica a través de una plataforma accesible y fácil de usar desde dispositivos móviles.
+Facilitar la gestión eficiente del capital humano del hospital mediante la plataforma integrada que permita el seguimiento, la actualización y la optimización de información relacionada con el personal, desde la contratación hasta el desarrollo profesional, con el fin de mejorar la calidad de atención médica y el bienestar del personal
 
 
