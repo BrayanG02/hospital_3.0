@@ -30,3 +30,28 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 
 3. Seguridad y confidencialidad de la información: Garantizar la seguridad y confidencialidad de los datos almacenados en la base de datos y la página web, implementando medidas de seguridad
 4. Análisis de datos para la toma de decisiones: Habilitar funcionalidades en la base de datos que permitan la generación de informes y análisis de datos sobre el desempeño del personal, la gestión de recursos humanos, tendencias de contratación, rotación de personal, y otros indicadores clave
+
+# REQUERIMIENTOS FUNCIONALES
+1. El sistema debe permitir registrar información detallada sobre cada miembro del personal médico, incluyendo nombre, apellido, número de identificación, especialidad, etc.
+2. El sistema debe permitir asignar horarios laborales a cada miembro del personal médico, especificando días laborables, horas de inicio y fin, y días de descanso.
+3. Se debe poder gestionar turnos de trabajo para el personal médico, considerando turnos diurnos y nocturnos, así como asignar la cantidad máxima de horas trabajadas por día o semana.
+4. Debería ser posible registrar y gestionar las ausencias, permisos y vacaciones del personal médico, garantizando la continuidad del servicio.
+5. El sistema debe validar y prevenir la asignación de horarios que generen solapamientos o excedan las horas laborales permitidas.
+6. Se debería implementar un sistema de rotación de turnos equitativo para distribuir de manera justa las responsabilidades y horarios entre el personal médico.
+7. El sistema debe enviar notificaciones o alertas automáticas en caso de cambios en los horarios asignados para que el personal esté informado.
+8. Se debe mantener un historial de los horarios asignados a cada miembro del personal médico para facilitar la revisión y auditoría de cambios.
+9. Los miembros del personal médico y los administradores deben tener acceso fácil para consultar los horarios asignados, tanto actuales como futuros.
+10. Debería ser posible realizar ajustes rápidos en los horarios en caso de emergencias médicas o necesidades operativas.
+
+# REQUERIMIENTOS NO FUNCIONALES
+1. El sistema debe garantizar un tiempo de respuesta rápido, incluso cuando se gestionan grandes cantidades de datos, para proporcionar una experiencia de usuario eficiente
+2. El sistema debe ser escalable para manejar un aumento en la cantidad de usuarios, personal médico y datos sin comprometer el rendimiento
+3. La información relacionada con el personal médico y los horarios laborales debe estar protegida mediante medidas de seguridad robustas, incluyendo el cifrado de datos y el control de acceso
+4. El sistema debe garantizar una alta disponibilidad, minimizando los tiempos de inactividad para asegurar el acceso constante a la información y funcionalidades
+5. Debe cumplir con regulaciones y normativas de privacidad de datos y laborales aplicables a la gestión de recursos humanos y la información médica
+6. La interfaz de usuario debe ser intuitiva y fácil de usar para facilitar la adopción por parte del personal médico y del personal administrativo
+7. El sistema debe ser compatible y ofrecer una experiencia de usuario óptima en dispositivos móviles, permitiendo la gestión remota de horarios y personaL
+8. El sistema debe ser fácil de mantener y actualizar, con una documentación clara y procesos de mantenimiento que minimicen el impacto en la operatividad
+9. Debe contar con funcionalidades de auditoría que registren eventos importantes, como cambios en horarios o accesos, para facilitar la supervisión y la resolución de problemas.
+10. El sistema debe ser capaz de interoperar con otros sistemas utilizados en el entorno médico, como sistemas de gestión hospitalaria, para garantizar una integración eficiente y la consistencia de datos
+
