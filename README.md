@@ -47,3 +47,9 @@
    git clone https://github.com/usuario/hospital_3.0_rh.git
 
 *Objetivos Especificos*
+
+	1.	Crear una aplicación móvil en Android para registrar y gestionar la información del personal del hospital, facilitando el acceso a los datos desde cualquier ubicación.
+	2.	Implementar un sistema de notificaciones en la aplicación para alertar a los empleados sobre actualizaciones en sus datos laborales, garantizando que estén informados en tiempo real.
+	3.	Desarrollar una interfaz amigable que permita a los encargados de recursos humanos editar y consultar información de los empleados, mejorando la eficiencia en la gestión del personal.
+	4.	Integrar un sistema de autenticación seguro que proteja los datos sensibles de los empleados, asegurando la privacidad y confidencialidad de la información.
+	5.	Facilitar el acceso a informes de desempeño y asistencia del personal a través de la aplicación, para que los supervisores puedan tomar decisiones informadas de manera rápida y efectiva.
