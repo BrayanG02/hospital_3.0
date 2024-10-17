@@ -55,3 +55,15 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 9. Debe contar con funcionalidades de auditoría que registren eventos importantes, como cambios en horarios o accesos, para facilitar la supervisión y la resolución de problemas.
 10. El sistema debe ser capaz de interoperar con otros sistemas utilizados en el entorno médico, como sistemas de gestión hospitalaria, para garantizar una integración eficiente y la consistencia de datos
 
+# REGLAS DE NEGOCIO
+1. Todo el personal médico debe estar registrado en el sistema antes de poder asignarle horarios laborales
+2. Solo el personal médico con las licencias y certificaciones vigentes puede ser asignado a horarios laborales
+3. Ningún miembro del personal médico puede exceder un límite específico de horas trabajadas por día o semana, según las normativas laborales
+4. Se debe garantizar una asignación equitativa de turnos entre el personal médico para evitar desigualdades injustificadas
+5. Todo el personal médico debe registrar cualquier ausencia, permiso o vacación con anticipación en el sistema
+6. No se permiten solapamientos en los horarios asignados para garantizar una cobertura adecuada en todo momento
+7. El acceso a la información de horarios y personal médico debe ser restringido y basado en roles para garantizar la privacidad
+8. Los horarios laborales deben seguir un formato estándar para facilitar la comprensión y la gestión
+9. Los cambios en los horarios deben ser confirmados por el personal médico y aprobados por un supervisor antes de hacerse efectivos
+10. Los datos importados de sistemas externos deben ser validados para garantizar la coherencia y consistencia en la base de datos
+
