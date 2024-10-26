@@ -67,3 +67,13 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 9. Los cambios en los horarios deben ser confirmados por el personal médico y aprobados por un supervisor antes de hacerse efectivos
 10. Los datos importados de sistemas externos deben ser validados para garantizar la coherencia y consistencia en la base de datos
 
+### Sketches
+![image](https://github.com/user-attachments/assets/7f1d8309-a4b2-4416-b9c0-28b376b89c0b)
+
+
+![image](https://github.com/user-attachments/assets/30340826-cfad-4b13-98af-83be57357840)
+
+
+
+![image](https://github.com/user-attachments/assets/db92bea2-53d5-4dc2-acb9-8beb54be9834)
+
