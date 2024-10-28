@@ -79,3 +79,20 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 
 ![image](https://github.com/user-attachments/assets/db92bea2-53d5-4dc2-acb9-8beb54be9834)
 
+
+### Hipótesis
+
+La implementación de una plataforma integrada para la gestión del capital humano mejorará significativamente la eficiencia en la gestión de horarios y turnos del personal médico.
+
+Centralizar la información del personal en una base de datos permitirá una toma de decisiones más rápida y eficiente respecto a la asignación de recursos y la planificación de turnos.
+
+La automatización de procesos administrativos mediante la plataforma reducirá el tiempo dedicado a tareas manuales y repetitivas, liberando recursos humanos para otras actividades más críticas.
+
+La seguridad y confidencialidad de la información gestionada por la plataforma aumentará la confianza del personal médico y administrativo en el sistema, mejorando la adopción y uso de la aplicación.
+
+El análisis de datos proporcionado por la plataforma permitirá identificar tendencias y patrones en el desempeño y la rotación del personal, facilitando la implementación de políticas de recursos humanos más efectivas.
+
+La disponibilidad de la plataforma en dispositivos móviles incrementará la accesibilidad y flexibilidad para el personal médico, mejorando la gestión de sus horarios y turnos desde cualquier lugar.
+
+
+
