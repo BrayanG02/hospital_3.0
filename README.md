@@ -77,3 +77,7 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 
 ![image](https://github.com/user-attachments/assets/db92bea2-53d5-4dc2-acb9-8beb54be9834)
 
+
+# **RESUMEN**
+
+Este proyecto busca desarrollar una plataforma que centralice y optimice la gestión de recursos humanos en el hospital. La herramienta permitirá almacenar y actualizar información del personal en una base de datos segura y accesible, facilitando tareas como la asignación de horarios, la administración de turnos, y el seguimiento de ausencias y permisos. Además, la plataforma automatizará procesos administrativos, asegurará la confidencialidad de los datos y proporcionará herramientas de análisis para apoyar la toma de decisiones en la gestión de personal. Su diseño se enfocará en ser rápido, escalable y fácil de usar, tanto en dispositivos de escritorio como móviles, garantizando así una gestión eficiente y continua en el entorno hospitalario.
