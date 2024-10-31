@@ -53,3 +53,6 @@
 	3.	Desarrollar una interfaz amigable que permita a los encargados de recursos humanos editar y consultar información de los empleados, mejorando la eficiencia en la gestión del personal.
 	4.	Integrar un sistema de autenticación seguro que proteja los datos sensibles de los empleados, asegurando la privacidad y confidencialidad de la información.
 	5.	Facilitar el acceso a informes de desempeño y asistencia del personal a través de la aplicación, para que los supervisores puedan tomar decisiones informadas de manera rápida y efectiva.
+
+
+Se implemento el Estado del Arte en el ambito Documentacion
