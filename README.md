@@ -94,5 +94,83 @@ El análisis de datos proporcionado por la plataforma permitirá identificar ten
 
 La disponibilidad de la plataforma en dispositivos móviles incrementará la accesibilidad y flexibilidad para el personal médico, mejorando la gestión de sus horarios y turnos desde cualquier lugar.
 
+### Marco Teórico
 
+¿Qué es Microsoft Word?
+Microsoft Word es un software informático procesador de texto, uno de los más utilizados a la hora de trabajar con documentos digitales, que nació de la mano de IBM en 1981.
+La aparición de las computadoras promovió el desarrollo de este procesador de texto que facilitó el trabajo de redacción. El Word automatizó y mejoró la tarea de escribir manuscritos ya que permitió revisar las veces necesarias lo escrito, para editarlo y reformularlo antes de la etapa de impresión.
+
+El Word es un programa elegido por una gran cantidad de usuarios porque es un procesador bastante simple. Pertenece al Paquete Office y se puede instalar en computadoras con diferentes sistemas operativos.
+Características de Microsoft Word
+Permite al usuario escribir textos, monografías, ensayos o artículos, de manera simple y ordenada.
+Puede utilizarse con casi cualquier sistema operativo y es uno de los procesadores de texto más usados del mundo.
+Tiene una versión de escritorio, una versión web y aplicación para móvil y tabletas.
+Se vale de recursos de texto y gráficos.
+Permite realizar documentos que pueden guardarse en la computadora e imprimirse.
+Tiene diferentes versiones, ya que se actualiza con frecuencia.
+Permite interactuar con otros programas del Paquete Office como Excel (en Word se pueden pegar gráficos y datos que provengan de planillas de cálculo).
+
+
+ ![image](https://github.com/user-attachments/assets/1fbce3c1-d685-463a-ad42-9d1103fbd838)
+
+Fig. Logo de la herramienta de documentación de Word.
+
+¿Qué es el lenguaje de programación Dart?
+Dart es un lenguaje open source desarrollado en Google con el objetivo de permitir a los desarrolladores utilizar un lenguaje orientado a objetos y con análisis estático de tipo.
+¿Qué es Dart?
+Dart es un lenguaje open source desarrollado en Google con el objetivo de permitir a los desarrolladores utilizar un lenguaje orientado a objetos y con análisis estático de tipo. Desde la primera versión estable en 2011, Dart ha cambiado bastante, tanto en el lenguaje en sí como en sus objetivos principales. Con la versión 2.0, el sistema de tipo de Dart pasó de opcional a estático, y desde su llegada, Flutter (explicamos qué es más adelante) se ha convertido en el principal objetivo del lenguaje.
+¿Qué hace a Dart especial?
+A diferencia de muchos lenguajes, Dart se diseñó con el objetivo de hacer el proceso de desarrollo lo más cómodo y rápido posible para los desarrolladores. Por eso, viene con un conjunto bastante extenso de herramientas integrado, como su propio gestor de paquetes, varios compiladores/transpiladores, un analizador y formateador. Además, la máquina virtual de Dart y la compilación Just-in-Time hacen que los cambios realizados en el código se puedan ejecutar inmediatamente.
+Una vez en producción, el código se puede compilar en lenguaje nativo, por lo que no es necesario un entorno especial para ejecutar. En caso de que se haga desarrollo web, Dart se transpila a JavaScript.
+En cuanto a la sintaxis, la de Dart es muy similar a lenguajes como JavaScript, Java y C ++, por lo que aprender Dart sabiendo uno de estos lenguajes es cuestión de horas.
+Además, Dart consta de un gran apoyo para la asincronía, y trabajar con generadores y iterables es extremadamente sencillo.
+¿Dónde puedo utilizar Dart?
+Dart es un lenguaje de propósito general, y lo puedes utilizar casi para cualquier cosa:
+En aplicaciones web, utilizando la librería de arte: html y el transpilador para transformar el código en Dart en JavaScript, o utilizando frameworks como AngularDart.
+En servidores, utilizando las librerías de arte: http y arte: io. También hay varios frameworks que se pueden utilizar, como por ejemplo Aqueduct.
+En aplicaciones de consola.
+En aplicaciones móviles gracies a Flutter.
+![image](https://github.com/user-attachments/assets/c5f2b89f-b707-4b5c-b16a-f9c4b5bc39b2)
+
+Fig. Logo del lenguaje de Dart
+
+
+
+¿Qué es SQL?
+El lenguaje de consulta estructurada (SQL) es un lenguaje de programación para almacenar y procesar información en una base de datos relacional. Una base de datos relacional almacena información en forma de tabla, con filas y columnas que representan diferentes atributos de datos y las diversas relaciones entre los valores de datos. Puede usar las instrucciones SQL para almacenar, actualizar, eliminar, buscar y recuperar información de la base de datos. También puede usar SQL para mantener y optimizar el rendimiento de la base de datos.
+
+¿Por qué es importante SQL?
+El lenguaje de consulta estructurada (SQL) es un lenguaje de consulta popular que se usa con frecuencia en todos los tipos de aplicaciones. Los analistas y desarrolladores de datos aprenden y usan SQL porque se integra bien con los diferentes lenguajes de programación. Por ejemplo, pueden incrustar consultas SQL con el lenguaje de programación Java para crear aplicaciones de procesamiento de datos de alto rendimiento con los principales sistemas de bases de datos SQL, como Oracle o MS SQL Server. Además, SQL es muy fácil de aprender, ya que en sus instrucciones se utilizan palabras clave comunes en inglés.
+
+Historia de SQL
+SQL se inventó en la década de 1970 con base en el modelo de datos relacional. AL inicio se conocía como el lenguaje de consultas estructuradas en inglés (SEQUEL). Mas tarde, el término se abrevió a SQL. Oracle, antes conocido como Relational Software, se convirtió en el primer proveedor en ofrecer un sistema comercial de administración de bases de datos relacionales SQL.
+
+ ![image](https://github.com/user-attachments/assets/b50c1f48-a0b9-4151-83c9-15496e2704ef)
+
+Fig. Logo de la herramienta se SQL
+
+Android Studio 
+bookmark_border
+Android Studio es el entorno de desarrollo integrado (IDE) oficial que se usa en el desarrollo de apps para Android. Basado en el potente editor de código y las herramientas para desarrolladores de IntelliJ IDEA, Android Studio ofrece aún más funciones que mejoran tu productividad cuando compilas apps para Android, como las siguientes:
+Un sistema de compilación flexible basado en Gradle
+Un emulador rápido y cargado de funciones
+Un entorno unificado donde puedes desarrollar para todos los dispositivos Android
+Ediciones en vivo para actualizar elementos componibles en emuladores y dispositivos físicos, en tiempo real
+Integración con GitHub y plantillas de código para ayudarte a compilar funciones de apps comunes y también importar código de muestra
+Variedad de marcos de trabajo y herramientas de prueba
+Herramientas de Lint para identificar problemas de rendimiento, usabilidad y compatibilidad de versiones, entre otros
+Compatibilidad con C++ y NDK
+Compatibilidad integrada con Google Cloud Platform, que facilita la integración con Google Cloud Messaging y App Engine
+En esta página, encontrarás una introducción a las funciones básicas de Android Studio. Para acceder a un resumen de los cambios más recientes, consulta las notas de la versión de Android Studio.
+ ![image](https://github.com/user-attachments/assets/052c585b-f851-44c0-99b5-20a8eec2ed29)
+
+Fig. Logo de Android Studio 
+
+
+
+Referencia:
+Equipo editorial, Etecé. (2023, 19 noviembre). Word - Concepto, significado y reseña histórica. Concepto. https://concepto.de/word/ 
+Nuria.Canals. (2020, 26 mayo). ¿Qué es el lenguaje de programación Dart? InLab FIB. https://inlab.fib.upc.edu/es/uncategorized-ca-es/que-es-el-lenguaje-de-programacion-dart/2020/ 
+¿Qué es SQL? - Explicación de lenguaje de consulta estructurado (SQL) - AWS. (s. f.). Amazon Web Services, Inc. https://aws.amazon.com/es/what-is/sql/ 
+Introducción a Android Studio. (s. f.). Android Developers. https://developer.android.com/studio/intro?hl=es-419 
 
