@@ -166,11 +166,69 @@ En esta página, encontrarás una introducción a las funciones básicas de Andr
 
 Fig. Logo de Android Studio 
 
-
-
 Referencia:
 Equipo editorial, Etecé. (2023, 19 noviembre). Word - Concepto, significado y reseña histórica. Concepto. https://concepto.de/word/ 
 Nuria.Canals. (2020, 26 mayo). ¿Qué es el lenguaje de programación Dart? InLab FIB. https://inlab.fib.upc.edu/es/uncategorized-ca-es/que-es-el-lenguaje-de-programacion-dart/2020/ 
 ¿Qué es SQL? - Explicación de lenguaje de consulta estructurado (SQL) - AWS. (s. f.). Amazon Web Services, Inc. https://aws.amazon.com/es/what-is/sql/ 
 Introducción a Android Studio. (s. f.). Android Developers. https://developer.android.com/studio/intro?hl=es-419 
+
+## Marco Metodológico del Proyecto: Sistema Hospitalario
+
+### Metodología: Scrum
+
+En el desarrollo del sistema hospitalario, hemos decidido adoptar la metodología Scrum, un marco ágil que nos permite gestionar el proyecto de manera iterativa e incremental. Scrum facilita la adaptación a los cambios y la priorización de funcionalidades según las necesidades del hospital, lo cual es esencial en un entorno tan dinámico como el de la salud.
+
+### Fases del Marco Metodológico
+
+1. **Planificación Inicial (Pre-Scrum)**
+   Antes de iniciar el ciclo Scrum, realizamos una planificación inicial para definir el producto y sus objetivos generales. Durante esta fase recopilamos los requisitos esenciales del sistema hospitalario, incluyendo:
+   - Gestión de pacientes
+   - Historia clínica electrónica
+   - Programación de citas médicas
+   - Gestión de recursos humanos
+
+   **Encuesta:**  
+   Como parte de esta etapa, aplicamos una encuesta para recopilar información clave, enfocándonos en el área de Recursos Humanos, lo que nos ayudó a identificar sus necesidades y expectativas. Estos datos orientaron el diseño y las funcionalidades del sistema.
+
+2. **Definición del Product Backlog**
+   Creamos una lista priorizada de funcionalidades, tareas y requisitos del sistema hospitalario. Este documento, gestionado por el Product Owner, es dinámico y puede ajustarse según las necesidades emergentes.
+
+3. **Planificación del Sprint**
+   En cada Sprint, el equipo selecciona elementos del Product Backlog para desarrollar. Se define un objetivo claro (ejemplo: "Desarrollar el módulo de gestión de citas médicas") y se desglosan las tareas necesarias para cumplirlo. La duración de un Sprint varía entre 1 y 4 semanas.
+
+4. **Desarrollo y Ejecución del Sprint**
+   Durante esta etapa:
+   - Se desarrolla el código.
+   - Se diseñan interfaces.
+   - Se realizan pruebas.
+   - Se celebran reuniones diarias de Daily Scrum para revisar avances y ajustar tareas.
+
+   Al final de cada Sprint, se entrega una versión funcional del sistema.
+
+5. **Revisión del Sprint**
+   En la Sprint Review, el equipo presenta el trabajo completado a los stakeholders clave. Se evalúa si las funcionalidades cumplen con los requisitos, como:
+   - La eficiencia del módulo de citas médicas.
+   - El cumplimiento de normas de privacidad en historiales médicos electrónicos.
+
+   Basándonos en la retroalimentación, se ajustan prioridades para futuros Sprints.
+
+6. **Retrospectiva del Sprint**
+   En esta reunión interna, reflexionamos sobre:
+   - Lo que funcionó bien.
+   - Aspectos por mejorar.
+   - Estrategias para ser más efectivos en el próximo Sprint.
+
+   Este proceso fomenta la mejora continua del equipo.
+
+7. **Revisión y Adaptación del Product Backlog**
+   Después de cada Sprint, el Product Owner ajusta el Product Backlog, incorporando retroalimentación, nuevas funcionalidades o correcciones de errores.
+
+8. **Entrega y Despliegue del Sistema**
+   Durante los últimos Sprints, preparamos el sistema para su entorno real mediante:
+   - Pruebas de aceptación.
+   - Integración con otros sistemas hospitalarios.
+   - Capacitación a usuarios finales.
+
+   Al finalizar, entregamos un sistema completamente funcional y listo para ser utilizado por los profesionales de salud.
+
 
