@@ -84,3 +84,10 @@ Este proyecto busca desarrollar una plataforma que centralice y optimice la gest
 
 # JUSTIFICACION
 La implementación de una plataforma integrada para la gestión del capital humano en el hospital es esencial para mejorar la calidad de atención médica y el bienestar del personal, ya que facilitará la centralización de información, la automatización de procesos administrativos, y garantizará la seguridad y confidencialidad de los datos. Esta plataforma permitirá un seguimiento eficiente del personal desde su contratación hasta su desarrollo profesional, optimizando la gestión de horarios y turnos, lo que reducirá la carga administrativa y permitirá al personal concentrarse en la atención a los pacientes. Además, la capacidad de análisis de datos facilitará la toma de decisiones informadas y el cumplimiento de normativas laborales, asegurando una gestión equitativa y efectiva de los recursos humanos. En conjunto, estos elementos no solo mejorarán la operatividad del hospital, sino que también establecerán un entorno de trabajo más positivo y productivo.
+
+# WIREFRAMES 
+![image](https://github.com/user-attachments/assets/dde4d673-ef01-4c05-8994-51a7fa30ee63)
+![image](https://github.com/user-attachments/assets/a152bac0-8aa4-4cd9-8462-54ae4511eafd)
+![image](https://github.com/user-attachments/assets/5ec7c6a6-0e94-4900-b966-2b7a751ddf26)
+![image](https://github.com/user-attachments/assets/8177c488-8b07-4f0b-aea7-bf6b4ccfe871)
+![image](https://github.com/user-attachments/assets/88a27552-d3f3-427a-a706-53b57d2b0c26)
