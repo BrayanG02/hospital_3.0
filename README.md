@@ -85,3 +85,9 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 ![image](https://github.com/user-attachments/assets/5ec7c6a6-0e94-4900-b966-2b7a751ddf26)
 ![image](https://github.com/user-attachments/assets/8177c488-8b07-4f0b-aea7-bf6b4ccfe871)
 ![image](https://github.com/user-attachments/assets/88a27552-d3f3-427a-a706-53b57d2b0c26)
+
+# MOCKUPS
+![image](https://github.com/user-attachments/assets/b19f92e7-f287-4e63-8064-0dc5f36d66e9)
+![image](https://github.com/user-attachments/assets/90370dfd-aa55-4341-b6e1-b4e80fcf289e)
+![image](https://github.com/user-attachments/assets/6f638b02-4be1-4a8f-85c8-ec8cf97cec11)
+
