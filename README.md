@@ -4,19 +4,21 @@
 
 
 ## UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ, PUEBLA
-### PROYECTO INTEGRADOR 
+### PROYECTO INTEGRADOR RECURSOS HUMANOS
 INGENIERIA EN DESARROLLO Y GESTIÓN DE SOFTWARE 
 
 "10° A"
 ## PROYECTO INTEGRADOR:
 RECURSOS HUMANOS 
+# "EQUIPO AMBRAYUS"
+![Organigrama Minimalista Blanco y Negro Equipo Creativo (1)](https://github.com/user-attachments/assets/8c85e4cb-0a91-410d-b600-9d23f1a95b82)
 
-| INTEGRANTES       |
-| --------------------------- | 
-| América Yaely Estudillo Licona | 
-| Jesús Ríos Gómez            | 
-| Bruno Lemus González | 
-|Brayan Gutiérrez
+| Nombre          | Cargo                            |
+| --------------------------- | -------------------------------- |
+| América Yaely Estudillo Licona | Desarrollador Frontend/Documentador                   |
+| Jesús Ríos Gómez            | Líder del proyecto |
+| Brayan Gutierrez Ramirez | Desarrollador Backend |
+|Bruno Lemus Gonzalez|Administrador de Base de Datos|
 
 </div>
 
@@ -67,7 +69,7 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 9. Los cambios en los horarios deben ser confirmados por el personal médico y aprobados por un supervisor antes de hacerse efectivos
 10. Los datos importados de sistemas externos deben ser validados para garantizar la coherencia y consistencia en la base de datos
 
-### Sketches
+#  Sketches
 ![image](https://github.com/user-attachments/assets/7f1d8309-a4b2-4416-b9c0-28b376b89c0b)
 
 
@@ -77,17 +79,15 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 
 ![image](https://github.com/user-attachments/assets/db92bea2-53d5-4dc2-acb9-8beb54be9834)
 
-
-# **RESUMEN**
-
-Este proyecto busca desarrollar una plataforma que centralice y optimice la gestión de recursos humanos en el hospital. La herramienta permitirá almacenar y actualizar información del personal en una base de datos segura y accesible, facilitando tareas como la asignación de horarios, la administración de turnos, y el seguimiento de ausencias y permisos. Además, la plataforma automatizará procesos administrativos, asegurará la confidencialidad de los datos y proporcionará herramientas de análisis para apoyar la toma de decisiones en la gestión de personal. Su diseño se enfocará en ser rápido, escalable y fácil de usar, tanto en dispositivos de escritorio como móviles, garantizando así una gestión eficiente y continua en el entorno hospitalario.
-
-# JUSTIFICACION
-La implementación de una plataforma integrada para la gestión del capital humano en el hospital es esencial para mejorar la calidad de atención médica y el bienestar del personal, ya que facilitará la centralización de información, la automatización de procesos administrativos, y garantizará la seguridad y confidencialidad de los datos. Esta plataforma permitirá un seguimiento eficiente del personal desde su contratación hasta su desarrollo profesional, optimizando la gestión de horarios y turnos, lo que reducirá la carga administrativa y permitirá al personal concentrarse en la atención a los pacientes. Además, la capacidad de análisis de datos facilitará la toma de decisiones informadas y el cumplimiento de normativas laborales, asegurando una gestión equitativa y efectiva de los recursos humanos. En conjunto, estos elementos no solo mejorarán la operatividad del hospital, sino que también establecerán un entorno de trabajo más positivo y productivo.
-
 # WIREFRAMES 
 ![image](https://github.com/user-attachments/assets/dde4d673-ef01-4c05-8994-51a7fa30ee63)
 ![image](https://github.com/user-attachments/assets/a152bac0-8aa4-4cd9-8462-54ae4511eafd)
 ![image](https://github.com/user-attachments/assets/5ec7c6a6-0e94-4900-b966-2b7a751ddf26)
 ![image](https://github.com/user-attachments/assets/8177c488-8b07-4f0b-aea7-bf6b4ccfe871)
 ![image](https://github.com/user-attachments/assets/88a27552-d3f3-427a-a706-53b57d2b0c26)
+
+# MOCKUPS
+![image](https://github.com/user-attachments/assets/b19f92e7-f287-4e63-8064-0dc5f36d66e9)
+![image](https://github.com/user-attachments/assets/90370dfd-aa55-4341-b6e1-b4e80fcf289e)
+![image](https://github.com/user-attachments/assets/6f638b02-4be1-4a8f-85c8-ec8cf97cec11)
+
