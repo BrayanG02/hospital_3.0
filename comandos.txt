@@ -1,0 +1,38 @@
+-instalar el cli de ionic
+    npm install -g @ionic/cli
+
+-Verifica que se haya instalado correctamente:
+    ionic --version
+
+-instalar dependencias
+    npm install
+
+-Para correr el proyecto
+    ionic serve
+-----------------------------------------------------------
+
+-instalar
+    npm install @capacitor/assets --save-dev
+
+nomenclatura de iconos y splash
+assets/
+├── icon-only.png
+├── icon-foreground.png
+├── icon-background.png
+├── splash.png
+└── splash-dark.png
+
+-ejecutar para generar
+    npx capacitor-assets generate
+
+-añadir Android
+    ionic capacitor add android
+
+-Construir el proyecto
+    ionic build
+
+-Sincronizar con Capacitor:
+    npx cap sync android
+
+-abrir en Android studio
+    npx cap open android
