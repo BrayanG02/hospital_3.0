@@ -91,6 +91,8 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 ![image](https://github.com/user-attachments/assets/90370dfd-aa55-4341-b6e1-b4e80fcf289e)
 ![image](https://github.com/user-attachments/assets/6f638b02-4be1-4a8f-85c8-ec8cf97cec11)
 
+ Bruno
+=======
 # PROTOTIPO (NO FUNCIONAL)
 | ICONO DE APP | SPLASH SCREEN | LOGIN SCREEN |
 |------------------------|------------------------|------------------------|
