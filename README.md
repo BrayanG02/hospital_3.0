@@ -1,3 +1,4 @@
+
 <div align="center">
 
  ![Imagen 1](https://github.com/JonaIbarra/Recursos-Humanos/blob/America/Documentation/LOGO%20UNIVERSIDAD%201.jpeg)    
@@ -91,9 +92,9 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 ![image](https://github.com/user-attachments/assets/90370dfd-aa55-4341-b6e1-b4e80fcf289e)
 ![image](https://github.com/user-attachments/assets/6f638b02-4be1-4a8f-85c8-ec8cf97cec11)
 
- Bruno
-=======
+
 # PROTOTIPO (NO FUNCIONAL)
 | ICONO DE APP | SPLASH SCREEN | LOGIN SCREEN |
 |------------------------|------------------------|------------------------|
 | ![image](https://github.com/user-attachments/assets/00fb3e4d-8abe-4824-a17f-af96a7c3c364) | ![image](https://github.com/user-attachments/assets/7c18e9db-d422-4903-b5ab-a5112ab3c6b8) | ![image](https://github.com/user-attachments/assets/2e97093f-89b2-4cf7-aacd-3ad705e5d34d) |
+
