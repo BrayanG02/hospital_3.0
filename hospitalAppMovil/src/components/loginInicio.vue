@@ -1,4 +1,4 @@
-<template>
+h<template>
     <ion-content class="ion-padding">
       <div class="flex justify-center items-center py-8">
         <ion-card class="max-w-sm lg:max-w-4xl w-full shadow-lg overflow-hidden">
