@@ -1,112 +1,127 @@
 <template>
-  <div style="height: 400px; width: 600px;">
-    <h1 class="text-1xl font-bold text-center text-gray-800 my-6">
-      Tipos de Personal Médico
-    </h1>
-    <v-chart :option="chartOptions" style="height: 400px; width: 600px;"></v-chart>
-  </div>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Dashboard Personal Médico</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="chart-container">
+        <canvas id="barChart1" ref="barChart1"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="barChart2" ref="barChart2"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="pieChart" ref="pieChart"></canvas>
+      </div>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue';
-import { use } from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { BarChart } from 'echarts/charts';
-import { GridComponent, TooltipComponent, LegendComponent } from 'echarts/components';
-import VChart from 'vue-echarts';
-import axios from 'axios';
-
-use([CanvasRenderer, BarChart, GridComponent, TooltipComponent, LegendComponent]);
+import { defineComponent, onMounted, ref } from "vue";
+import { Chart } from "chart.js/auto";
 
 export default defineComponent({
-  name: 'PersonalMedicoChart',
-  components: { VChart },
+  name: "Dashboard",
   setup() {
-    const chartOptions = ref(null);
-    const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6ImpvbmEyMyIsIkNvcnJlb19FbGVjdHJvbmljbyI6InN0cmluZyIsIkNvbnRyYXNlbmEiOiIxMjM0IiwiTnVtZXJvX1RlbGVmb25pY29fTW92aWwiOiJzdHJpbmcifQ.uGxblZ3LX-pRNbXaGEAs41QWESPwqCIdHmBqokYgPIA";
-
-    const fetchData = async () => {
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
-
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/personal_medico/', { headers });
-        const data = response.data;
-
-        // Contadores por tipo
-        const tipoCount = {};
-
-        // Contar tipos de personal
-        data.forEach(item => {
-          if (tipoCount.hasOwnProperty(item.Tipo)) {
-            tipoCount[item.Tipo]++;
-          } else {
-            tipoCount[item.Tipo] = 1;
-          }
-        });
-
-        // Convertir datos para gráfico
-        const xAxisData = Object.keys(tipoCount);
-        const seriesData = xAxisData.map(tipo => tipoCount[tipo]);
-
-        // Configuración del gráfico
-        chartOptions.value = {
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
-          },
-          legend: {
-            data: ['Cantidad']
-          },
-          grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-          },
-          xAxis: {
-            type: 'category',
-            data: xAxisData,
-            axisLabel: {
-              fontSize: 8,
-              lineHeight: 50,
-              align: 'center',
-              verticalAlign: 'middle',
-            }
-          },
-          yAxis: {
-            type: 'value'
-          },
-          series: [{
-            name: 'Cantidad',
-            type: 'bar',
-            data: seriesData,
-            label: {
-              show: true,
-              position: 'top',
-              formatter: '{c}'
-            },
-            itemStyle: {
-              color: '#4CAF50' // Cambia el color según sea necesario
-            }
-          }]
-        };
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+    const barChart1 = ref(null);
+    const barChart2 = ref(null);
+    const pieChart = ref(null);
 
     onMounted(() => {
-      fetchData();
+      // Gráfica 1: Pacientes atendidos
+      new Chart(barChart1.value, {
+        type: "bar",
+        data: {
+          labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo"],
+          datasets: [
+            {
+              label: "Pacientes atendidos",
+              data: [12, 19, 3, 5, 2],
+              backgroundColor: "rgba(75, 192, 192, 0.8)",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: "top" },
+          },
+        },
+      });
+
+      // Gráfica 2: Consultas diarias
+      new Chart(barChart2.value, {
+        type: "bar",
+        data: {
+          labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+          datasets: [
+            {
+              label: "Consultas diarias",
+              data: [10, 15, 8, 12, 7],
+              backgroundColor: "rgba(153, 102, 255, 0.8)",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: "top" },
+          },
+        },
+      });
+
+      // Gráfica 3: Distribución de especialidades
+      new Chart(pieChart.value, {
+        type: "pie",
+        data: {
+          labels: ["Cardiología", "Neurología", "Pediatría", "Dermatología"],
+          datasets: [
+            {
+              data: [20, 15, 30, 10],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(255, 206, 86, 0.8)",
+                "rgba(75, 192, 192, 0.8)",
+              ],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: "right" },
+          },
+        },
+      });
     });
 
     return {
-      chartOptions,
+      barChart1,
+      barChart2,
+      pieChart,
     };
   },
 });
 </script>
+
+<style scoped>
+.chart-container {
+  margin: 20px auto;
+  width: 100%;
+  height: 300px; /* Tamaño fijo ideal para móviles */
+  max-width: 500px; /* Límites para pantallas más grandes */
+}
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

@@ -1,4 +1,4 @@
-h<template>
+<!-- h<template>
     <ion-content class="ion-padding">
       <div class="flex justify-center items-center py-8">
         <ion-card class="max-w-sm lg:max-w-4xl w-full shadow-lg overflow-hidden">
@@ -191,4 +191,115 @@ h<template>
   <style scoped>
   /* Personaliza los estilos según sea necesario */
   </style>
+   -->
+
+
+<template>
+    <ion-page>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Privilege Care Hospital</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-button expand="block" fill="outline" @click="signInWithGoogle">
+          INICIA SESIÓN CON GOOGLE
+        </ion-button>
   
+        <ion-label>O inicia sesión con tu email</ion-label>
+  
+        <ion-item>
+          <ion-select placeholder="Selecciona un Rol">
+            <ion-select-option value="Paciente">Paciente</ion-select-option>
+            <ion-select-option value="Medico">Medico</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input
+          v-model="usuario"
+           type="email"
+           required label="Email"
+           label-placement="floating"
+           placeholder="Escribe tu email"
+           >
+          </ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input
+            v-model="usuario"
+            type="password"
+            required label="Contraseña"
+            label-placement="floating"
+            placeholder="Escribe tu contraseña">
+            </ion-input>
+        </ion-item>
+      <RouterLink to="/dashboardPersonalMedico">
+        <ion-button expand="block" fill="solid" @click="signIn">
+          INICIAR SESIÓN
+        </ion-button>
+      </RouterLink>
+        
+      <RouterLink to="/RegisterUser">
+        <ion-button expand="block" fill="outline" @click="register">
+          O REGISTRATE
+        </ion-button>
+      </RouterLink>
+
+      <RouterLink to="/dashboardPersonalMedico">
+        <ion-button expand="block" fill="outline" @click="register">
+          Dashboard
+        </ion-button>
+      </RouterLink>
+
+      <RouterLink to="/DashBoard">
+        <ion-button expand="block" fill="outline" @click="register">
+         menu
+        </ion-button>
+      </RouterLink>
+
+
+
+      </ion-content>
+    </ion-page>
+  </template>
+  
+  <script>
+  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonLabel, IonItem, IonInput, IonSelect, IonSelectOption } from '@ionic/vue';
+  
+  export default {
+    components: {
+      IonPage,
+      IonHeader,
+      IonToolbar,
+      IonTitle,
+      IonContent,
+      IonButton,
+      IonLabel,
+      IonItem,
+      IonInput,
+      IonSelect,
+      IonSelectOption
+    },
+    methods: {
+      signInWithGoogle() {
+        // Your Google Sign-in logic here
+        console.log('Sign in with Google');
+      },
+      signIn() {
+        // Your Sign-in logic here
+        console.log('Sign in'); },
+      register() {
+        // Your registration logic here
+        console.log('Register');
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  ion-content {
+    padding: 16px;
+  }
+  </style>

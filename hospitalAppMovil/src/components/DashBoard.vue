@@ -1,51 +1,109 @@
 <template>
-    <ion-menu content-id="main-content">
+  <ion-app>
+    <!-- Menu -->
+    <ion-menu content-id="main" ref="menu">
       <ion-header>
-        <ion-toolbar color="tertiary">
-          <ion-title>Menu Content</ion-title>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">This is the menu content.</ion-content>
+      <ion-content>
+        <ion-list>
+          <ion-item v-for="item in items" :key="item.title" :router-link="item.url">
+            <ion-icon :name="item.icon" slot="start"></ion-icon>
+            <ion-label>{{ item.title }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
     </ion-menu>
-    <ion-page id="main-content">
+
+    <!-- Main Content -->
+    <ion-page id="main">
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
+            <ion-menu-button @click="toggleMenu"></ion-menu-button>
           </ion-buttons>
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+      <ion-content>
+        <p>Tap the button in the toolbar to open the menu.</p>
+      </ion-content>
     </ion-page>
-  </template>
-  
-  <script>
-    import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-    import { defineComponent } from 'vue';
-  
-    export default defineComponent({
-      components: {
-        IonButtons,
-        IonContent,
-        IonHeader,
-        IonMenu,
-        IonMenuButton,
-        IonPage,
-        IonTitle,
-        IonToolbar,
-      },
-    });
-  </script>
-  
-  <style scoped>
-    ion-menu::part(backdrop) {
-      background-color: rgba(255, 0, 255, 0.5);
-    }
-  
-    ion-menu::part(container) {
-      border-radius: 0 20px 20px 0;
-  
-      box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
-    }
-  </style>
+  </ion-app>
+</template>
+
+<script>
+import { defineComponent, ref, onMounted } from "vue";
+import {
+  IonApp,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonMenu,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+
+export default defineComponent({
+  components: {
+    IonApp,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonMenu,
+    IonMenuButton,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  },
+  setup() {
+    // Usamos ref para referenciar el menú
+    const menuRef = ref(null);
+
+    // Método para abrir el menú
+    const toggleMenu = () => {
+      if (menuRef.value) {
+        menuRef.value.open(); // Abre el menú
+      }
+    };
+
+    return {
+      menuRef,
+      toggleMenu,
+    };
+  },
+  data() {
+    return {
+      items: [
+        { title: "Inbox", url: "/folder/Inbox", icon: "mail" },
+        { title: "Outbox", url: "/folder/Outbox", icon: "paper-plane" },
+        { title: "Favorites", url: "/folder/Favorites", icon: "heart" },
+        { title: "Archived", url: "/folder/Archived", icon: "archive" },
+        { title: "Trash", url: "/folder/Trash", icon: "trash" },
+      ],
+    };
+  },
+});
+</script>
+
+<style scoped>
+ion-menu {
+  --background: #fff;
+}
+
+ion-item {
+  --ion-item-background: transparent;
+}
+</style>

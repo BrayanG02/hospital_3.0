@@ -24,7 +24,7 @@ assets/
 
 -ejecutar para generar
     npx capacitor-assets generate
-
+-----------------------------------------------------------
 -añadir Android
     ionic capacitor add android
 
@@ -36,3 +36,7 @@ assets/
 
 -abrir en Android studio
     npx cap open android
+
+-----------------------------------------------------------
+instalar chart
+npm install chart.js --save

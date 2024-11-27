@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import DashBoard from '../components/DashBoard.vue'
 import LoginView from '../components/loginInicio.vue'
 import RegistroUser from '../components/registroUser.vue'
-/* import registerUser from '../components/registerUser.vue'; */
+import DashboardPersonalMedico from '../components/recursos_humanos/DashboardPersonalMedico.vue';
 
 const routes= [
  {
@@ -16,11 +16,6 @@ const routes= [
   component: LoginView
  },
  {
-/*   path: '/RegisterUser',
-  name: 'RegisterUser',
-  component: RegistroUser */
- },
- {
   path: '/RegisterUser',
   name: 'RegisterUser',
   component: RegistroUser
@@ -30,9 +25,12 @@ const routes= [
   path: '/DashBoard',
   name: 'DashBoard',
   component: DashBoard,
-  children: [
-
-  ]
+  },
+  {
+    path: '/dashboardPersonalMedico',
+    name: 'DashboardPersonalMedico',
+    component: DashboardPersonalMedico,
+    meta: { requiresAuth: true } // Esta ruta requiere que el usuario esté logueado.
   }
 
 ]
