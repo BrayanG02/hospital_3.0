@@ -1,109 +1,83 @@
 <template>
   <ion-app>
-    <!-- Menu -->
-    <ion-menu content-id="main" ref="menu">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-list>
-          <ion-item v-for="item in items" :key="item.title" :router-link="item.url">
-            <ion-icon :name="item.icon" slot="start"></ion-icon>
-            <ion-label>{{ item.title }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
 
-    <!-- Main Content -->
-    <ion-page id="main">
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-menu-button @click="toggleMenu"></ion-menu-button>
-          </ion-buttons>
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <p>Tap the button in the toolbar to open the menu.</p>
-      </ion-content>
-    </ion-page>
-  </ion-app>
+<ion-menu side="start" menuId="first">
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Menú de inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>Gatos</ion-item>
+    <ion-item>Perros</ion-item>
+    <ion-item>Pájaros</ion-item>
+    <ion-item>Hurones</ion-item>
+    <ion-item>Osos</ion-item>
+  </ion-list>
+</ion-content>
+
+</ion-menu>
+
+<ion-menu side="start" menuId="custom" class="my-custom-menu">
+
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Menú personalizado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>Tomates</ion-item>
+    <ion-item>Lechugas</ion-item>
+    <ion-item>Cebollas</ion-item>
+    <ion-item>Calabazas</ion-item>
+    <ion-item>Pepinos</ion-item>
+  </ion-list>
+</ion-content>
+
+</ion-menu>
+
+<ion-menu side="end" type="push">
+
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>Ajustes</ion-item>
+    <ion-item>Mi cuenta</ion-item>
+    <ion-item>Usuarios</ion-item>
+    <ion-item>Vídeos</ion-item>
+    <ion-item>Publicaciones</ion-item>
+  </ion-list>
+</ion-content>
+
+</ion-menu>
+
+
+<ion-router-outlet main></ion-router-outlet>
+
+    
+</ion-app>
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from "vue";
-import {
-  IonApp,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonMenu,
-  IonMenuButton,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/vue";
+import {IonApp, IonMenu, IonContent, IonList } from '@ionic/vue';
 
-export default defineComponent({
+export default{
   components: {
     IonApp,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
     IonMenu,
-    IonMenuButton,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  },
-  setup() {
-    // Usamos ref para referenciar el menú
-    const menuRef = ref(null);
+    IonContent,
+    IonList
+  }
+}
 
-    // Método para abrir el menú
-    const toggleMenu = () => {
-      if (menuRef.value) {
-        menuRef.value.open(); // Abre el menú
-      }
-    };
-
-    return {
-      menuRef,
-      toggleMenu,
-    };
-  },
-  data() {
-    return {
-      items: [
-        { title: "Inbox", url: "/folder/Inbox", icon: "mail" },
-        { title: "Outbox", url: "/folder/Outbox", icon: "paper-plane" },
-        { title: "Favorites", url: "/folder/Favorites", icon: "heart" },
-        { title: "Archived", url: "/folder/Archived", icon: "archive" },
-        { title: "Trash", url: "/folder/Trash", icon: "trash" },
-      ],
-    };
-  },
-});
 </script>
-
-<style scoped>
-ion-menu {
-  --background: #fff;
-}
-
-ion-item {
-  --ion-item-background: transparent;
-}
-</style>

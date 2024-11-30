@@ -235,7 +235,7 @@
             placeholder="Escribe tu contraseña">
             </ion-input>
         </ion-item>
-      <RouterLink to="/dashboardPersonalMedico">
+      <RouterLink to="/">
         <ion-button expand="block" fill="solid" @click="signIn">
           INICIAR SESIÓN
         </ion-button>
