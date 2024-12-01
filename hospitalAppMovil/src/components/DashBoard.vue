@@ -1,28 +1,5 @@
 <template>
   <ion-app>
-
-<ion-menu side="start" menuId="first">
-
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Menú de inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-list>
-    <ion-item>Gatos</ion-item>
-    <ion-item>Perros</ion-item>
-    <ion-item>Pájaros</ion-item>
-    <ion-item>Hurones</ion-item>
-    <ion-item>Osos</ion-item>
-  </ion-list>
-</ion-content>
-
-</ion-menu>
-
-<ion-menu side="start" menuId="custom" class="my-custom-menu">
-
 <ion-header>
   <ion-toolbar color="tertiary">
     <ion-title>Menú personalizado</ion-title>
@@ -39,7 +16,6 @@
   </ion-list>
 </ion-content>
 
-</ion-menu>
 
 <ion-menu side="end" type="push">
 

@@ -1,10 +1,17 @@
 <template>
     <ion-content>
       <ion-card>
-        <ion-card-header>
+        <ion-header>
+      <ion-toolbar>
+        <ion-title>Registro de usuario</ion-title><br>
+        <ion-subtitle>Regístrate y forma parte del hospital</ion-subtitle>
+      </ion-toolbar>
+    </ion-header>
+<!--         <ion-card-header>
+
           <ion-card-subtitle>Regístrate y forma parte del hospital</ion-card-subtitle>
           <ion-card-title>REGÍSTRATE</ion-card-title>
-        </ion-card-header>
+        </ion-card-header> -->
   
         <ion-card-content>
           <!-- Selección de roles -->
@@ -76,7 +83,7 @@
         <ion-card-footer>
           <ion-text>
             ¿Ya tienes cuenta?
-            <ion-button fill="clear" size="small" href="/login">Inicia Sesión</ion-button>
+            <ion-button fill="clear" size="small" href="/">Inicia Sesión</ion-button>
           </ion-text>
         </ion-card-footer>
       </ion-card>
