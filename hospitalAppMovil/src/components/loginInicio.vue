@@ -1,10 +1,5 @@
 <template>
     <ion-page>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Privilege Care Hospital</ion-title>
-        </ion-toolbar>
-      </ion-header>
       <ion-content>
         <ion-button expand="block" fill="outline" @click="signInWithGoogle">
           INICIA SESIÓN CON GOOGLE
@@ -13,7 +8,8 @@
         <ion-label>O inicia sesión con tu email</ion-label>
   
         <ion-item>
-          <ion-select placeholder="Selecciona un Rol">
+          <ion-select label="Selecciona un Rol"
+          label-placement="floating">
             <ion-select-option value="Paciente">Paciente</ion-select-option>
             <ion-select-option value="Medico">Medico</ion-select-option>
           </ion-select>
@@ -40,7 +36,7 @@
             </ion-input>
         </ion-item>
         
-      <RouterLink to="/DashBoard">
+      <RouterLink to="/dashboardPersonalMedico">
         <ion-button expand="block" fill="solid" @click="signIn">
           INICIAR SESIÓN
         </ion-button>
@@ -57,14 +53,11 @@
   </template>
   
   <script>
-  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonLabel, IonItem, IonInput, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { IonPage, IonContent, IonButton, IonLabel, IonItem, IonInput, IonSelect, IonSelectOption } from '@ionic/vue';
   
   export default {
     components: {
       IonPage,
-      IonHeader,
-      IonToolbar,
-      IonTitle,
       IonContent,
       IonButton,
       IonLabel,

@@ -1,6 +1,7 @@
 <template>
+<ion-app>
     <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
-      <table class="min-w-full bg-white border border-gray-300">
+      <ion-table class="min-w-full bg-white border border-gray-300">
         <thead>
           <tr class="bg-gray-100 text-gray-600 uppercase text-xs leading-normal">
             <th class="w-1/12 py-4 px-6 text-left">ID</th>
@@ -25,10 +26,10 @@
             <td class="py-4 px-6 text-left whitespace-nowrap">{{ new Date(item.Fecha_Actualizacion).toLocaleDateString() }}</td>
           </tr>
         </tbody>
-      </table>
+      </ion-table>
     </div>
-  </template>
-  
+  </ion-app>
+  </template>  
   <script>
   import axios from 'axios';
   

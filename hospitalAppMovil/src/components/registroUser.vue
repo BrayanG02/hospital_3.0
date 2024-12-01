@@ -6,30 +6,16 @@
         <ion-title>Registro de usuario</ion-title><br>
         <ion-subtitle>Regístrate y forma parte del hospital</ion-subtitle>
       </ion-toolbar>
-    </ion-header>
-<!--         <ion-card-header>
-
-          <ion-card-subtitle>Regístrate y forma parte del hospital</ion-card-subtitle>
-          <ion-card-title>REGÍSTRATE</ion-card-title>
-        </ion-card-header> -->
-  
+    </ion-header>  
         <ion-card-content>
           <!-- Selección de roles -->
           <ion-item>
             <ion-select
               label="Selecciona un Rol"
-              label-placement="floating"
-              v-model="selectedRole"
-              @ionChange="fetchRole($event)"
-              interface="popover"
-            >
-              <ion-select-option
-                v-for="role in roles"
-                :key="role.id"
-                :value="role.id"
-              >
-                {{ role.Nombre }}
-              </ion-select-option>
+              label-placement="floating">
+              <ion-select-option value="recursosHumanos">Recursos Humanos</ion-select-option>
+              <ion-select-option value="recursosHumanos">Programacion quirurgica</ion-select-option>
+              <ion-select-option value="recursosHumanos">Pediatria</ion-select-option>
             </ion-select>
           </ion-item>
   
@@ -91,7 +77,18 @@
   </template>
   
   <script>
+  import {  IonContent, IonButton, IonItem, IonInput, IonSelect, IonSelectOption, IonCardContent } from '@ionic/vue';
+  
   export default {
+    components: {
+      IonContent,
+      IonButton,
+      IonItem,
+      IonInput,
+      IonSelect,
+      IonSelectOption,
+      IonCardContent,
+    },
     data() {
       return {
         user: {
@@ -100,15 +97,15 @@
           password: ""
         },
         confirmPassword: "",
-        roles: [
+/*         roles: [
           { id: 1, Nombre: "Administrador" },
           { id: 2, Nombre: "Editor" },
           { id: 3, Nombre: "Usuario" },
           { id: 4, Nombre: "Moderador" },
           { id: 5, Nombre: "Invitado" }
         ],
-        selectedRole: null
-      };
+        selectedRole: null*/
+      }; 
     },
     methods: {
       registerUser() {
@@ -123,14 +120,14 @@
         });
         // Aquí puedes agregar la lógica para registrar al usuario (API, validaciones, etc.)
       },
-      fetchRole(event) {
-        this.selectedRole = event.detail.value; // Actualiza el modelo
+/*       fetchRole(event) {
+        this.selectedRole = event.detail.value;  Actualiza el modelo
   setTimeout(() => {
     console.log("Rol seleccionado:", this.selectedRole);
-  }, 4); // Luego actualiza el modelo
-      }
+  }, 4);  Luego actualiza el modelo
+      } */
 
     }
-  };
+};
   </script>
   
