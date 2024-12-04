@@ -1,14 +1,14 @@
 <template>
   <ion-app>
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title>Áreas Médicas</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
-        
+
         <!-- Tabla -->
         <table class="w-full border-collapse">
           <tbody>
@@ -16,28 +16,28 @@
               <!-- Fila de la tabla con datos -->
               <td class="p-4 border-t">
                 <!-- Encerrar cada ID en un bloque -->
-                <div class="border-2 border-gray-300 p-4 rounded-lg mb-4">
+                <div class="border-2 border-blue-200 p-4 rounded-lg mb-4 bg-blue-50">
                   <!-- Columna ID (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-gray-700">ID</div>
-                    <div class="md:w-5/6 font-bold text-gray-900">{{ item.ID }}</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">ID</div>
+                    <div class="md:w-5/6 font-bold text-blue-900">{{ item.ID }}</div>
                   </div>
-                  
+
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Nombre -->
-                    <div class="md:w-1/6 font-semibold text-sm text-gray-700">Nombre</div>
-                    <div class="md:w-5/6 text-sm text-gray-900">{{ item.Nombre }}</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Nombre</div>
+                    <div class="md:w-5/6 text-sm text-blue-900">{{ item.Nombre }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Descripción -->
-                    <div class="md:w-1/6 font-semibold text-sm text-gray-700">Descripción</div>
-                    <div class="md:w-5/6 text-sm text-gray-900">{{ item.Descripcion }}</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Descripción</div>
+                    <div class="md:w-5/6 text-sm text-blue-900">{{ item.Descripcion }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Estatus -->
-                    <div class="md:w-1/6 font-semibold text-sm text-gray-700">Estatus</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Estatus</div>
                     <div class="md:w-5/6">
                       <span :class="{
                         'bg-green-500': item.Estatus === 'Activo',
@@ -50,26 +50,40 @@
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Fecha Registro -->
-                    <div class="md:w-1/6 font-semibold text-sm text-gray-700">Fecha Registro</div>
-                    <div class="md:w-5/6 text-sm text-gray-900">{{ new Date(item.Fecha_Registro).toLocaleDateString() }}</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Fecha Registro</div>
+                    <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Registro).toLocaleDateString() }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0">
                     <!-- Columna Fecha Actualización -->
-                    <div class="md:w-1/6 font-semibold text-sm text-gray-700">Fecha Actualización</div>
-                    <div class="md:w-5/6 text-sm text-gray-900">{{ new Date(item.Fecha_Actualizacion).toLocaleDateString() }}</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Fecha Actualización</div>
+                    <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Actualizacion).toLocaleDateString() }}</div>
                   </div>
 
-                  <!-- Botones de acción -->
+                  <!-- Botones de acción con solo iconos (SVG personalizados) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 mt-4">
-                    <button @click="editar(item.ID)" class="bg-yellow-400 text-white px-4 py-2 rounded-full text-xs mx-1 hover:bg-yellow-500">
-                      Editar
+                    <!-- Botón Editar con solo el icono SVG -->
+                    <button @click="editar(item.ID)" class="bg-blue-500 text-white p-3 rounded-full mx-1 hover:bg-blue-600 transition-all">
+                      <!-- Icono de Editar -->
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                        <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+                      </svg>
                     </button>
-                    <button @click="eliminar(item.ID)" class="bg-red-500 text-white px-4 py-2 rounded-full text-xs mx-1 hover:bg-red-600">
-                      Eliminar
+
+                    <!-- Botón Eliminar con solo el icono SVG -->
+                    <button @click="eliminar(item.ID)" class="bg-red-500 text-white p-3 rounded-full mx-1 hover:bg-red-600 transition-all">
+                      <!-- Icono de Eliminar -->
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                        <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                      </svg>
                     </button>
-                    <button @click="actualizar(item.ID)" class="bg-blue-500 text-white px-4 py-2 rounded-full text-xs mx-1 hover:bg-blue-600">
-                      Actualizar
+
+                    <!-- Botón Actualizar con solo el icono SVG -->
+                    <button @click="actualizar(item.ID)" class="bg-green-500 text-white p-3 rounded-full mx-1 hover:bg-green-600 transition-all">
+                      <!-- Icono de Actualizar -->
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                        <path d="M480-120q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-480q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q82 0 155.5 35T760-706v-94h80v240H600v-80h110q-41-56-101-88t-129-32q-117 0-198.5 81.5T200-480q0 117 81.5 198.5T480-200q105 0 183.5-68T756-440h82q-15 137-117.5 228.5T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/>
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -179,19 +193,23 @@ td {
 
 .font-semibold {
   font-size: 1rem;
-  color: #4a5568;
+  color: #1c3d5a; /* Azul más oscuro */
 }
 
 .text-sm {
   font-size: 0.875rem;
 }
 
-.text-gray-700 {
-  color: #4a5568;
+.text-blue-800 {
+  color: #1c3d5a;
 }
 
-.text-gray-900 {
+.text-blue-900 {
   color: #1a202c;
+}
+
+.bg-blue-50 {
+  background-color: #ebf8ff;
 }
 
 /* Columna ID en negrita */
@@ -217,38 +235,9 @@ td {
 /* Botones */
 button {
   font-size: 0.8rem;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #2b6cb0; /* Color azul más oscuro */
-}
-
-/* Estilo responsivo */
-@media (max-width: 768px) {
-  .md\:w-1\/6 {
-    width: 100%;
-    margin-bottom: 8px;
-  }
-
-  .md\:w-5\/6 {
-    width: 100%;
-  }
-
-  td {
-    padding: 12px;
-  }
-
-  /* Ajuste de márgenes en las celdas */
-  .border-b {
-    border-bottom: 2px solid #e2e8f0;
-  }
-
-  .border-2 {
-    border: 2px solid #e2e8f0;
-  }
+  transition: background-color;
 }
 </style>
