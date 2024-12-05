@@ -34,7 +34,7 @@ const routes= [
     path: '/dashboardPersonalMedico',
     name: 'DashboardPersonalMedico',
     component: DashboardPersonalMedico,
-    meta: { requiresAuth: true } // Esta ruta requiere que el usuario esté logueado.
+    meta: { requiresAuth: true }, // Esta ruta requiere que el usuario esté logueado.
  },
  {
   path: '/RegistroAreaMedica',
