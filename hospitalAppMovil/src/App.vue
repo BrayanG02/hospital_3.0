@@ -79,6 +79,16 @@
     </ion-menu-toggle>
     <ion-menu-toggle>
       <ion-item>
+     <RouterLink to="/registroHorarios">
+          <ion-button class="myButton">
+            <img src="../buttons/areas_medicas.png" class="button-icon" />
+            Registro Horarios
+          </ion-button>
+        </RouterLink>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item>
         <RouterLink to="/RegistroPersona">
           <ion-button class="myButton">
             <img src="../buttons/registro_persona.png" class="button-icon" />
@@ -90,6 +100,7 @@
     </ion-list>
     </ion-content>
   </ion-menu>
+  
 
   <ion-router-outlet id="main-content"></ion-router-outlet>
   

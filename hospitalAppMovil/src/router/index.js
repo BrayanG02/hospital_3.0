@@ -12,6 +12,7 @@ import PuestosDepartamentos from '../components/recursos_humanos/PuestosDepartam
 //Registros
 import RegistroAreasMedicas from '../components/Registros/registroAreasMedicas.vue';
 import RegistroPersona from '../components/Registros/registroPersona.vue';
+import RegistroHorarios from '../components/Registros/registroHorarios.vue';
 
 
 const routes= [
@@ -71,6 +72,12 @@ const routes= [
   name: 'PuestosDepartamentos',
   component: PuestosDepartamentos,   
  },
+ {
+  path: '/registroHorarios',
+  name: 'RegistroHorarios',
+  component: RegistroHorarios,   
+ },
+
 
 
 ]

@@ -9,35 +9,36 @@
     <ion-content>
       <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
 
-        <!-- Tabla -->
+        <!-- Tabla Áreas Médicas -->
         <table class="w-full border-collapse">
           <tbody>
             <tr v-for="item in data" :key="item.ID" class="border-b">
               <!-- Fila de la tabla con datos -->
               <td class="p-4 border-t">
-                <!-- Encerrar cada ID en un bloque -->
+                <!-- Encerrar cada área en un bloque -->
                 <div class="border-2 border-blue-200 p-4 rounded-lg mb-4 bg-blue-50">
+                  
                   <!-- Columna ID (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">ID</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>ID</strong></div>
                     <div class="md:w-5/6 font-bold text-blue-900">{{ item.ID }}</div>
                   </div>
 
+                  <!-- Columna Nombre (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <!-- Columna Nombre -->
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Nombre</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Nombre</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Nombre }}</div>
                   </div>
 
+                  <!-- Columna Descripción (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <!-- Columna Descripción -->
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Descripción</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Descripción</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Descripcion }}</div>
                   </div>
 
+                  <!-- Columna Estatus (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <!-- Columna Estatus -->
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Estatus</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Estatus</strong></div>
                     <div class="md:w-5/6">
                       <span :class="{
                         'bg-green-500': item.Estatus === 'Activo',
@@ -48,22 +49,26 @@
                     </div>
                   </div>
 
+                  <!-- Columna Fecha Registro (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <!-- Columna Fecha Registro -->
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Fecha Registro</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Registro</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Registro).toLocaleDateString() }}</div>
                   </div>
 
+                  <!-- Columna Fecha Actualización (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0">
-                    <!-- Columna Fecha Actualización -->
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800">Fecha Actualización</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Actualización</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Actualizacion).toLocaleDateString() }}</div>
                   </div>
 
                   <!-- Botones de acción con solo iconos (SVG personalizados) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 mt-4">
                     <!-- Botón Editar con solo el icono SVG -->
-                    <button @click="editar(item.ID)" class="bg-blue-500 text-white p-3 rounded-full mx-1 hover:bg-blue-600 transition-all">
+                    <button @click="editar(item.ID)" 
+                      class="text-white p-3 rounded-full mx-1 transition-all"
+                      style="background-color: #fbbf24;" 
+                      onmouseover="this.style.backgroundColor='#f59e0b'" 
+                      onmouseout="this.style.backgroundColor='#fbbf24'">
                       <!-- Icono de Editar -->
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                         <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
@@ -107,7 +112,7 @@ export default {
   },
   data() {
     return {
-      // Datos estáticos
+      // Datos de áreas médicas
       data: [
         {
           ID: 1,
@@ -145,18 +150,14 @@ export default {
     };
   },
   methods: {
-    // Métodos para manejar los botones
     editar(id) {
       alert(`Editar área con ID: ${id}`);
-      // Aquí puedes agregar la lógica para editar el registro
     },
     eliminar(id) {
       alert(`Eliminar área con ID: ${id}`);
-      // Aquí puedes agregar la lógica para eliminar el registro
     },
     actualizar(id) {
       alert(`Actualizar área con ID: ${id}`);
-      // Aquí puedes agregar la lógica para actualizar el registro
     }
   }
 }
