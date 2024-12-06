@@ -2,7 +2,7 @@
   <ion-menu content-id="main-content" v-if="isAuthenticated">
     <ion-header>
       <ion-toolbar color="secondary">
-        <ion-title>Recursos humanos</ion-title>
+        <ion-title>Recursos Humanos</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
@@ -79,7 +79,7 @@
     </ion-menu-toggle>
     <ion-menu-toggle>
       <ion-item>
-     <RouterLink to="/registroHorarios">
+     <RouterLink to="/RegistroHorarios">
           <ion-button class="myButton">
             <img src="../buttons/areas_medicas.png" class="button-icon" />
             Registro Horarios
@@ -97,6 +97,15 @@
         </RouterLink>
       </ion-item>
     </ion-menu-toggle>
+    <!-- Botón de Cerrar Sesión -->
+    <ion-menu-toggle>
+          <ion-item @click="logout">
+            <ion-button class="myButton">
+              <img src="../buttons/cerrar_sesion.png" class="button-icon" />
+              Cerrar sesión
+            </ion-button>
+          </ion-item>
+    </ion-menu-toggle>
     </ion-list>
     </ion-content>
   </ion-menu>
@@ -107,10 +116,11 @@
   <ion-page id="main-content">
     <ion-header>
       <ion-toolbar>
-        <ion-buttons slot="start">
+        <ion-buttons slot="start" v-if="isAuthenticated">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>Hospital Privilege Care</ion-title>
+
       </ion-toolbar>
     </ion-header>
     <ion-content> 
@@ -148,7 +158,9 @@
       this.isAuthenticated = true; // Llama a esto cuando el usuario inicie sesión
     },
     logout() {
-      this.isAuthenticated = false; // Llama a esto cuando el usuario cierre sesión
+      // Lógica de cerrar sesión
+      this.isAuthenticated = false; // Cambia el estado para ocultar el menú
+      this.$router.push('/'); // Redirige a la pantalla de inicio de sesión
     },
   },
   });
