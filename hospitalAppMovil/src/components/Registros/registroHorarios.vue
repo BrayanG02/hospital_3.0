@@ -2,7 +2,7 @@
   <ion-app>
     <ion-content>
 
-      <!-- Tarjeta para registrar el horario -->
+      <!-- Tarjeta para registrar el horario de un empleado -->
       <ion-card>
         <ion-header>
           <ion-toolbar>
@@ -12,7 +12,18 @@
 
         <ion-card-content>
 
-          <!-- Nombre del empleado -->
+          <!-- ID del Empleado -->
+          <ion-item>
+            <ion-input
+              v-model="nuevoHorario.empleado_id"
+              label="ID del Empleado"
+              label-placement="floating"
+              type="number"
+              placeholder="ID del empleado"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Nombre del Empleado -->
           <ion-item>
             <ion-input
               v-model="nuevoHorario.nombre"
@@ -22,19 +33,20 @@
             ></ion-input>
           </ion-item>
 
-          <!-- Especialidad del empleado -->
+          <!-- Especialidad -->
           <ion-item>
             <ion-input
               v-model="nuevoHorario.especialidad"
               label="Especialidad"
               label-placement="floating"
-              placeholder="Especialidad"
+              placeholder="Especialidad del empleado"
             ></ion-input>
           </ion-item>
 
-          <!-- Desplegable para seleccionar día de la semana -->
-          <ion-item>
-            <ion-select v-model="nuevoHorario.dia_semana" placeholder="Día de la semana">
+          <!-- Día de la Semana (Desplegable) -->
+          <ion-item class="select-item">
+            <ion-label position="floating">Día de la Semana</ion-label>
+            <ion-select v-model="nuevoHorario.dia_semana" placeholder="Seleccione un día">
               <ion-select-option value="Lunes">Lunes</ion-select-option>
               <ion-select-option value="Martes">Martes</ion-select-option>
               <ion-select-option value="Miércoles">Miércoles</ion-select-option>
@@ -45,12 +57,24 @@
             </ion-select>
           </ion-item>
 
+          <!-- Turno (Desplegable) -->
+          <ion-item class="select-item">
+            <ion-label position="floating">Turno</ion-label>
+            <ion-select v-model="nuevoHorario.turno" placeholder="Seleccione un turno">
+              <ion-select-option value="Mañana">Mañana</ion-select-option>
+              <ion-select-option value="Tarde">Tarde</ion-select-option>
+              <ion-select-option value="Noche">Noche</ion-select-option>
+            </ion-select>
+          </ion-item>
+
           <!-- Hora de Inicio -->
           <ion-item>
             <ion-input
               v-model="nuevoHorario.hora_inicio"
+              label="Hora de Inicio"
+              label-placement="floating"
               type="time"
-              placeholder="Hora de Inicio"
+              placeholder="Hora de inicio"
             ></ion-input>
           </ion-item>
 
@@ -58,21 +82,14 @@
           <ion-item>
             <ion-input
               v-model="nuevoHorario.hora_fin"
+              label="Hora de Fin"
+              label-placement="floating"
               type="time"
-              placeholder="Hora de Fin"
+              placeholder="Hora de fin"
             ></ion-input>
           </ion-item>
 
-          <!-- Desplegable para seleccionar el turno -->
-          <ion-item>
-            <ion-select v-model="nuevoHorario.turno" placeholder="Turno">
-              <ion-select-option value="Mañana">Mañana</ion-select-option>
-              <ion-select-option value="Tarde">Tarde</ion-select-option>
-              <ion-select-option value="Noche">Noche</ion-select-option>
-            </ion-select>
-          </ion-item>
-
-          <!-- Nombre del departamento -->
+          <!-- Nombre del Departamento -->
           <ion-item>
             <ion-input
               v-model="nuevoHorario.nombre_departamento"
@@ -82,13 +99,35 @@
             ></ion-input>
           </ion-item>
 
-          <!-- Nombre de la sala -->
+          <!-- Nombre de la Sala -->
           <ion-item>
             <ion-input
               v-model="nuevoHorario.nombre_sala"
               label="Sala"
               label-placement="floating"
               placeholder="Nombre de la sala"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Fecha de Creación -->
+          <ion-item>
+            <ion-input
+              v-model="nuevoHorario.fecha_creacion"
+              label="Fecha de Creación"
+              label-placement="floating"
+              type="date"
+              placeholder="Fecha de creación"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Fecha de Actualización -->
+          <ion-item>
+            <ion-input
+              v-model="nuevoHorario.fecha_actualizacion"
+              label="Fecha de Actualización"
+              label-placement="floating"
+              type="date"
+              placeholder="Fecha de actualización"
             ></ion-input>
           </ion-item>
 
@@ -107,14 +146,16 @@
 
 <script>
 import {
-  IonApp,
   IonContent,
   IonButton,
   IonItem,
   IonInput,
   IonSelect,
   IonSelectOption,
-  IonCardContent
+  IonCardContent,
+  IonLabel,
+  IonCard,
+  IonApp
 } from '@ionic/vue';
 
 export default {
@@ -126,7 +167,9 @@ export default {
     IonInput,
     IonSelect,
     IonSelectOption,
-    IonCardContent
+    IonCardContent,
+    IonCard,
+    IonLabel
   },
 
   data() {
@@ -138,7 +181,7 @@ export default {
         dia_semana: '',
         hora_inicio: '',
         hora_fin: '',
-        turno: 'Mañana',
+        turno: '',
         nombre_departamento: '',
         nombre_sala: '',
         fecha_creacion: new Date().toISOString().substr(0, 10),
@@ -150,9 +193,9 @@ export default {
 
   methods: {
     registrarHorario() {
-      console.log('Horario registrado:', this.nuevoHorario);
+      console.log('Horario del Empleado registrado:', this.nuevoHorario);
 
-      alert(`¡Registro exitoso para ${this.nuevoHorario.nombre}!`);
+      alert(`El horario del empleado '${this.nuevoHorario.nombre}' fue registrado exitosamente!`);
 
       this.limpiarFormulario();
     },
@@ -165,7 +208,7 @@ export default {
         dia_semana: '',
         hora_inicio: '',
         hora_fin: '',
-        turno: 'Mañana',
+        turno: '',
         nombre_departamento: '',
         nombre_sala: '',
         fecha_creacion: new Date().toISOString().substr(0, 10),
@@ -178,11 +221,30 @@ export default {
 </script>
 
 <style scoped>
+/* Input básico */
 .ion-input {
   font-weight: bold;
   padding: 12px;
 }
 
+/* Estilo para separadores entre campos */
+ion-item {
+  margin-bottom: 16px;
+}
+
+/* Personalización para los campos con marco alrededor */
+.select-item {
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.select-item ion-select {
+  padding: 10px;
+}
+
+/* Botones personalizados */
 .ion-button {
   margin-top: 16px;
   font-weight: bold;

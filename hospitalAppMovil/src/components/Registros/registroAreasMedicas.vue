@@ -32,20 +32,27 @@
             ></ion-input>
           </ion-item>
 
-          <!-- Desplegable para seleccionar el estatus -->
+           <!-- Estado (Etiquetas y selector de estado) -->
           <ion-item>
-            <ion-select v-model="nuevaArea.Estatus" placeholder="Estatus">
+            <ion-label position="floating" style="margin-bottom: 0px;">Estado</ion-label> <!-- Separar etiqueta con margin-bottom -->
+            <ion-select 
+              v-model="nuevaArea.Estatus" 
+              placeholder="Selecciona el estado" 
+              style="margin-top: 10px;"> <!-- Separar opciones con margin-top -->
               <ion-select-option value="Activo">Activo</ion-select-option>
               <ion-select-option value="Inactivo">Inactivo</ion-select-option>
             </ion-select>
           </ion-item>
 
+
           <!-- Fecha de Registro -->
           <ion-item>
             <ion-input
               v-model="nuevaArea.Fecha_Registro"
+              label="Fecha de Registro"
+              label-placement="floating"
               type="date"
-              placeholder="Fecha de Registro"
+              placeholder="(YYYY-MM-DD)"
             ></ion-input>
           </ion-item>
 
@@ -53,8 +60,10 @@
           <ion-item>
             <ion-input
               v-model="nuevaArea.Fecha_Actualizacion"
+              label="Fecha de Actualización"
+              label-placement="floating"
               type="date"
-              placeholder="Fecha de Actualización"
+              placeholder="(YYYY-MM-DD)"
             ></ion-input>
           </ion-item>
 

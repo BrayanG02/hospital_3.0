@@ -43,7 +43,7 @@
         <RouterLink to="/dashboardPersonalMedico">
           <ion-button class="myButton">
             <img src="../buttons/dashboard.png" class="button-icon" />
-            Dashboard de personal medico
+            Dashboard 
           </ion-button>
         </RouterLink>
       </ion-item>
