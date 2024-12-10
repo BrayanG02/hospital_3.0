@@ -92,6 +92,134 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 ![image](https://github.com/user-attachments/assets/90370dfd-aa55-4341-b6e1-b4e80fcf289e)
 ![image](https://github.com/user-attachments/assets/6f638b02-4be1-4a8f-85c8-ec8cf97cec11)
 
+### METRODOLOGIA SCRUM
+# Análisis
+
+El objetivo principal de la aplicación móvil es facilitar la gestión del capital humano en el hospital, permitiendo la centralización, actualización y seguimiento de la información relacionada con el personal médico y administrativo. Para llevar a cabo este desarrollo de manera eficiente y adaptativa, se optará por la metodología Scrum, que permite trabajar de manera ágil, iterativa e incremental, enfocándose en entregar funcionalidades de valor para los usuarios de manera continua.
+
+La aplicación debe permitir registrar información detallada sobre el personal, gestionar horarios laborales, turnos, ausencias y permisos, así como ofrecer herramientas que optimicen los procesos administrativos. Además, debe garantizar la seguridad de la información, la privacidad de los datos y una interfaz intuitiva para los usuarios.
+
+Para asegurar que el producto final cumpla con las necesidades y expectativas del hospital, se diseñó una encuesta para identificar las necesidades específicas de los usuarios en cuanto a la gestión de horarios, la asignación de turnos, la administración de ausencias y permisos, así como sus expectativas en términos de funcionalidad y facilidad de uso. Los resultados obtenidos a través de esta encuesta permiten al equipo de desarrollo priorizar las funcionalidades más relevantes y garantizar que la aplicación responda adecuadamente a los problemas y desafíos que enfrenta el personal en su trabajo diario.
+
+La flexibilidad de Scrum es crucial para este proyecto, ya que la aplicación deberá adaptarse a posibles cambios en las normativas de salud, regulaciones laborales o incluso ajustes en la estructura organizativa del hospital. Cada Sprint ofrece la oportunidad de ajustar los objetivos y funcionalidades del sistema, asegurando que el producto final cumpla con los estándares y necesidades del hospital, manteniendo una alta disponibilidad, escalabilidad y un alto nivel de seguridad en la gestión de los datos.
+
+De esta manera, Scrum permite gestionar eficientemente tanto los requisitos funcionales como los no funcionales del sistema, garantizando que el hospital pueda optimizar la gestión de su personal, asegurando el bienestar de los trabajadores y mejorando la calidad de atención médica a través de una herramienta ágil y adaptable.
+
+## Diseño
+
+### Vista de Login
+
+En la vista de login, el usuario debe ingresar su correo electrónico y contraseña con los cuales fue registrado para poder acceder a la información.
+
+![Login](fig15.png)
+
+### Registro
+
+En esta pantalla, el usuario deberá completar los campos requeridos para crear una nueva cuenta. Los campos incluyen:
+
+- **Rol de usuario**: Seleccione su tipo de rol (por ejemplo, Administrador, Usuario, etc.).
+- **Nombre completo**: Ingrese su nombre completo.
+- **Correo electrónico**: Proporcione una dirección de correo electrónico válida.
+- **Contraseña**: Cree una contraseña segura.
+- **Confirmar contraseña**: Vuelva a escribir la contraseña para confirmarla.
+
+![Registro](fig16.png)
+
+### Dashboard
+
+En esta pantalla, se presenta un dashboard que ofrece una visión general de los datos de los empleados en varias categorías clave. Los elementos principales que se muestran son:
+
+- **Empleados por género**: Un gráfico que visualiza la distribución de empleados según su género.
+- **Horarios**: Un área que muestra los horarios de trabajo o turnos de los empleados.
+- **Áreas médicas**: Información sobre las áreas médicas disponibles o el número de empleados asignados a cada área.
+
+![Dashboard](fig17.png)
+
+### Menú de Recursos Humanos
+
+En esta vista, se presenta un menú de Recursos Humanos organizado en diferentes secciones para facilitar la gestión del personal. Las opciones disponibles son:
+
+- **Personal Médico**: Gestión de la información relacionada con los médicos y otros profesionales de la salud.
+- **Asignar Horarios**: Asignar o modificar los horarios de trabajo del personal.
+- **Puestos**: Gestión de los diferentes puestos disponibles dentro de la organización.
+- **Áreas Médicas**: Gestión de las distintas áreas médicas o departamentos dentro de la institución de salud.
+- **Personas**: Gestión de la información personal de los empleados.
+
+![Menú de Recursos Humanos](fig18.png)
+
+### CRUD de Personal Médico
+
+En esta pantalla, se presenta la sección Personal Médico, que incluye un CRUD (Crear, Leer, Actualizar, Eliminar) para gestionar la información del personal médico. Los elementos clave son:
+
+- **ID del personal médico**: Un identificador único para cada miembro del personal médico.
+- **Nombre**: El nombre completo del personal médico.
+- **Puesto**: El puesto o rol del personal médico.
+
+![CRUD de Personal Médico](fig19.png)
+
+### CRUD de Asignar Horarios
+
+En esta pantalla se presenta la sección Asignar Horarios, que incluye un CRUD para gestionar los horarios del personal. Los elementos clave son:
+
+- **ID**: Un identificador único para cada registro de asignación de horario.
+- **Puesto**: El puesto o rol del empleado al que se le asigna el horario.
+- **Turno de horario**: El horario asignado al personal.
+
+![CRUD de Asignar Horarios](fig20.png)
+
+### CRUD de Puestos
+
+En esta pantalla se presenta la sección Puestos, que incluye un CRUD para gestionar los puestos dentro de la organización. Los elementos clave son:
+
+- **ID**: Un identificador único para cada puesto.
+- **Puesto**: El nombre o título del puesto.
+- **Área médica**: El área o departamento médico al que pertenece el puesto.
+
+![CRUD de Puestos](fig21.png)
+
+### CRUD de Áreas Médicas
+
+En esta pantalla se presenta la sección Áreas Médicas, que incluye un CRUD para gestionar las diferentes áreas dentro de la institución. Los elementos clave son:
+
+- **ID**: Un identificador único para cada área médica.
+- **Nombre del área**: El nombre del área médica, como urgencias, radiología, pediatría, cirugía, etc.
+
+![CRUD de Áreas Médicas](fig22.png)
+
+### Registro de Persona
+
+En esta pantalla se presenta el Registro de Persona, donde se deben completar los siguientes campos para registrar a una nueva persona en el sistema:
+
+- **Nombre**: El primer nombre de la persona.
+- **Apellidos**: Los apellidos de la persona.
+- **Género**: Seleccione el género de la persona.
+- **CURP**: La Clave Única de Registro de Población (CURP).
+- **Tipo de sangre**: El tipo de sangre de la persona.
+
+![Registro de Persona](fig23.png)
+
+### Registro de Horarios
+
+En esta pantalla se presenta el Registro de Horarios, donde se deben completar los siguientes campos:
+
+- **CURP**: La Clave Única de Registro de Población (CURP).
+- **Nombre**: El primer nombre de la persona.
+- **Apellidos**: Los apellidos de la persona.
+- **Empleo**: El puesto o rol de la persona.
+- **Turno**: El turno o horario asignado a la persona.
+
+![Registro de Horarios](fig24.png)
+
+### Registro de Áreas Médicas
+
+En esta pantalla se presenta el Registro de Áreas Médicas, donde se deben completar los siguientes campos:
+
+- **Nombre del área**: El nombre de la nueva área médica.
+- **Descripción**: Una breve descripción del área médica.
+- **Estado**: El estado actual del área médica (activa o inactiva).
+
+![Registro de Áreas Médicas](fig25.png)
+
 
 # PROTOTIPO (NO FUNCIONAL)
 | ICONO DE APP | SPLASH SCREEN | LOGIN SCREEN |
