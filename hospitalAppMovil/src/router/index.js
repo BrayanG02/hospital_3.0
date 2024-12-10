@@ -90,10 +90,7 @@ const routes= [
   path: '/registroHorarios',
   name: 'RegistroHorarios',
   component: RegistroHorarios,   
- }, 
-
-
-
+ },
  {
   path: '/Horarios',
   name: 'Horarios',
