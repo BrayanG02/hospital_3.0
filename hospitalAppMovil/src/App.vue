@@ -29,6 +29,17 @@
     </ion-menu-toggle>
     <ion-menu-toggle>
       <ion-item>
+     <RouterLink to="/Horarios">
+          <ion-button class="myButton">
+            <img src="../buttons/areas_medicas.png" class="button-icon" />
+            Horarios
+          </ion-button>
+        </RouterLink>
+      </ion-item>
+    </ion-menu-toggle>
+    
+    <ion-menu-toggle>
+      <ion-item>
         <RouterLink to="/dashboardPersonalMedico">
           <ion-button class="myButton">
             <img src="../buttons/dashboard.png" class="button-icon" />
