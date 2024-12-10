@@ -60,16 +60,6 @@
     </ion-menu-toggle>
     <ion-menu-toggle>
       <ion-item>
-        <RouterLink to="/PuestoPersonalMedico">
-          <ion-button class="myButton">
-            <img src="../buttons/puesto_personal.png" class="button-icon" />
-            Puesto Personal Medico
-          </ion-button>
-        </RouterLink>
-      </ion-item>
-    </ion-menu-toggle>
-    <ion-menu-toggle>
-      <ion-item>
         <RouterLink to="/PuestosDepartamentos">
           <ion-button class="myButton">
             <img src="../buttons/puesto_departamentos.png" class="button-icon" />
