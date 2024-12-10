@@ -90,6 +90,16 @@
     </ion-menu-toggle>
     <ion-menu-toggle>
       <ion-item>
+        <RouterLink to="/RegistroPersonalMedico">
+          <ion-button class="myButton">
+            <img src="../buttons/registro_PersonalMedico.png" class="button-icon" />
+            Registro de Personal Medico
+          </ion-button>
+        </RouterLink>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item>
      <RouterLink to="/registroHorarios">
           <ion-button class="myButton">
             <img src="../buttons/areas_medicas.png" class="button-icon" />

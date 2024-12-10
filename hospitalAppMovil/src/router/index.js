@@ -14,7 +14,7 @@ import Horarios from '../components/recursos_humanos/Horarios.vue';
 import RegistroAreasMedicas from '../components/Registros/registroAreasMedicas.vue';
 import RegistroPersona from '../components/Registros/registroPersona.vue';
 import RegistroHorarios from '../components/Registros/registroHorarios.vue';
-
+import RegistroPersonalMedico from '../components/Registros/registroPersonalMedico.vue';
 
 const routes= [
  {
@@ -49,6 +49,16 @@ const routes= [
   component: RegistroPersona  
  },
  {
+  path: '/registroHorarios',
+  name: 'RegistroHorarios',
+  component: RegistroHorarios,   
+ },
+ {
+  path: '/RegistroPersonalMedico',
+  name: 'RegistroPersonalMedico',
+  component: RegistroPersonalMedico  
+ },
+ {
   path: '/PerfilUsuario',
   name: 'PerfilUsuario',
   component: PerfilUsuario   
@@ -73,11 +83,7 @@ const routes= [
   name: 'PuestosDepartamentos',
   component: PuestosDepartamentos,   
  },
- {
-  path: '/registroHorarios',
-  name: 'RegistroHorarios',
-  component: RegistroHorarios,   
- },
+
  {
   path: '/Horarios',
   name: 'Horarios',
