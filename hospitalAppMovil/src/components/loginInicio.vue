@@ -1,4 +1,7 @@
 <template>
+  <ion-page>
+  <ion-content>
+  <div class="container">
   <ion-card class="login-card">
     <!-- Imagen principal -->
     <div class="logo-container">
@@ -56,6 +59,9 @@
       </RouterLink>
     </ion-card-content>
   </ion-card>
+ </div>
+ </ion-content>
+ </ion-page>
 </template>
 
 <script>
@@ -175,4 +181,9 @@ ion-button {
   transform: scale(0.96); /* Leve reducción de tamaño */
   --background: #5379d0; /* Fondo más oscuro al presionar */
 }
+
+.container { display: flex; justify-content: center; align-items: center; height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura de la ventana */
+ }
+
+ ion-content { --ion-background-color: transparent; }
 </style>
