@@ -137,7 +137,9 @@
             ></ion-input>
           </ion-item>
           <!-- Botón de registro -->
-          <ion-button expand="block">Guardar</ion-button>
+        <RouterLink to="/RegisterUser">
+          <ion-button class="myButton" fill="outline">Registrar Persona</ion-button>
+        </RouterLink>
         </ion-card-content>
       </ion-card>
     </ion-content>
@@ -192,3 +194,24 @@ export default {
   },
 };
 </script>
+
+<style>
+.myButton {
+  --background:    #001F3F; /* Fondo morado */
+  --color: white; /* Texto blanco */
+  --border-radius: 12px; /* Bordes redondeados */
+  --padding-start: 20px; /* Espaciado interno para texto */
+  --padding-end: 20px;
+  --height: 50px; /* Altura fija para diseño móvil */
+  font-size: 16px; /* Tamaño de texto más grande para táctiles */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Efecto de presión en el botón */
+.myButton:active {
+  transform: scale(0.96); /* Leve reducción de tamaño */
+  --background: #5379d0; /* Fondo más oscuro al presionar */
+}
+</style>

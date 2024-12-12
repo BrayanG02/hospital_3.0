@@ -98,16 +98,16 @@
         </RouterLink>
       </ion-item>
     </ion-menu-toggle>
-    <ion-menu-toggle>
+<!--     <ion-menu-toggle>
       <ion-item>
         <RouterLink to="/RegistroPersona">
           <ion-button class="myButton">
             <img src="../buttons/registro_persona.png" class="button-icon" />
             Registro de Persona
           </ion-button>
-        </RouterLink>
+        </RouterLink> 
       </ion-item>
-    </ion-menu-toggle>
+    </ion-menu-toggle> -->
     <!-- Botón de Cerrar Sesión -->
     <ion-menu-toggle>
           <ion-item @click="logout">

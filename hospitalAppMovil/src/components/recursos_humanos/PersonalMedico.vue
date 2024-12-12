@@ -19,61 +19,61 @@
                 <div class="border-2 border-blue-200 p-4 rounded-lg mb-4 bg-blue-50">
                   <!-- Columna Persona ID (en negrita) -->
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Persona ID</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Persona ID</strong></div>
                     <div class="md:w-5/6 font-bold text-blue-900">{{ item.Persona_ID }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Departamento ID (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Departamento ID</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Departamento ID</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Departamento_ID }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Cédula Profesional (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Cédula Profesional</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Cédula Profesional</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Cedula_Profesional }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Tipo (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Tipo</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Tipo</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Tipo }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Especialidad (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Especialidad</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Especialidad</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Especialidad }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Fecha Registro (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Fecha Registro</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Registro</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Registro).toLocaleDateString() }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Fecha Contratación (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Fecha Contratación</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Contratación</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Contratacion).toLocaleDateString() }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Fecha Término Contrato (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Fecha Término Contrato</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Término Contrato</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Termino_Contrato).toLocaleDateString() }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Salario (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Salario</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Salario</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ item.Salario | currency }}</div>
                   </div>
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Estatus (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Estatus</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Estatus</strong></div>
                     <div class="md:w-5/6">
                       <span :class="{
                         'bg-green-500': item.Estatus === 'Activo',
@@ -86,7 +86,7 @@
 
                   <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
                     <!-- Columna Fecha Actualización (en negrita) -->
-                    <div class="md:w-1/6 font-bold text-sm text-blue-800">Fecha Actualización</div>
+                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Actualización</strong></div>
                     <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Actualizacion).toLocaleDateString() }}</div>
                   </div>
 
@@ -113,7 +113,7 @@
                     </button>
 
                     <!-- Botón Actualizar con solo el icono SVG -->
-                    <button @click="actualizar(item.ID)" class="bg-green-500 text-white p-3 rounded-full mx-1 hover:bg-green-600 transition-all">
+                    <button @click="actualizar(item.Persona_ID)" class="bg-green-500 text-white p-3 rounded-full mx-1 hover:bg-green-600 transition-all">
                       <!-- Icono de Actualizar -->
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                         <path d="M480-120q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-480q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q82 0 155.5 35T760-706v-94h80v240H600v-80h110q-41-56-101-88t-129-32q-117 0-198.5 81.5T200-480q0 117 81.5 198.5T480-200q105 0 183.5-68T756-440h82q-15 137-117.5 228.5T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/>
@@ -200,81 +200,82 @@ export default {
 </script>
 
 <style scoped>
-/* Estilo general para la tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td {
-  padding: 16px;
-  vertical-align: top;
-}
-
-/* Estilo para las celdas de Estatus */
-.bg-green-500 {
-  background-color: #48bb78; /* Verde */
-  color: white;
-}
-
-.bg-red-500 {
-  background-color: #f56565; /* Rojo */
-  color: white;
-}
-
-/* Estilo de las celdas (márgenes entre las secciones de la tabla) */
-td {
-  border-top: 1px solid #e2e8f0;
-  padding: 16px;
-}
-
-.font-semibold {
-  font-size: 1rem;
-  color: #1c3d5a; /* Azul más oscuro */
-}
-
-.text-sm {
-  font-size: 0.875rem;
-}
-
-.text-blue-800 {
-  color: #1c3d5a;
-}
-
-.text-blue-900 {
-  color: #1a202c;
-}
-
-.bg-blue-50 {
-  background-color: #ebf8ff;
-}
-
-/* Columna ID en negrita */
-.font-bold {
-  font-weight: bold;
-  color: #1a202c; /* Color de texto oscuro */
-}
-
-/* Encerrar cada ID con un borde */
-.border-2 {
-  border: 2px solid #e2e8f0;
-}
-
-.rounded-lg {
-  border-radius: 8px;
-}
-
-/* Espacio entre registros */
-.mb-4 {
-  margin-bottom: 16px;
-}
-
-/* Botones */
-button {
-  font-size: 0.8rem;
-  padding: 8px 16px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color;
-}
-</style>
+  /* Estilo general para la tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td {
+    padding: 16px;
+    vertical-align: top;
+  }
+  
+  /* Estilo para las celdas de Estatus */
+  .bg-green-500 {
+    background-color: #48bb78; /* Verde */
+    color: white;
+  }
+  
+  .bg-red-500 {
+    background-color: #f56565; /* Rojo */
+    color: white;
+  }
+  
+  /* Estilo de las celdas (márgenes entre las secciones de la tabla) */
+  td {
+    border-top: 1px solid #e2e8f0;
+    padding: 16px;
+  }
+  
+  .font-semibold {
+    font-size: 1rem;
+    color: #1c3d5a; /* Azul más oscuro */
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-blue-800 {
+    color: #1c3d5a;
+  }
+  
+  .text-blue-900 {
+    color: #1a202c;
+  }
+  
+  .bg-blue-50 {
+    background-color: #ebf8ff;
+  }
+  
+  /* Columna ID en negrita */
+  .font-bold {
+    font-weight: bold;
+    color: #1a202c; /* Color de texto oscuro */
+  }
+  
+  /* Encerrar cada ID con un borde */
+  .border-2 {
+    border: 2px solid #e2e8f0;
+  }
+  
+  .rounded-lg {
+    border-radius: 8px;
+  }
+  
+  /* Espacio entre registros */
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+  
+  /* Botones */
+  button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color;
+  }
+  </style>
+  

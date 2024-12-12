@@ -117,28 +117,82 @@
   </script>
   
   <style scoped>
+  /* Estilo general para la tabla */
   table {
     width: 100%;
     border-collapse: collapse;
   }
+  
   td {
     padding: 16px;
     vertical-align: top;
   }
-  button {
-    font-size: 0.8rem;
-    padding: 8px;
-    border-radius: 12px;
-    cursor: pointer;
-  }
+  
+  /* Estilo para las celdas de Estatus */
   .bg-green-500 {
-    background-color: #48bb78;
+    background-color: #48bb78; /* Verde */
+    color: white;
   }
+  
   .bg-red-500 {
-    background-color: #f56565;
+    background-color: #f56565; /* Rojo */
+    color: white;
   }
+  
+  /* Estilo de las celdas (márgenes entre las secciones de la tabla) */
+  td {
+    border-top: 1px solid #e2e8f0;
+    padding: 16px;
+  }
+  
+  .font-semibold {
+    font-size: 1rem;
+    color: #1c3d5a; /* Azul más oscuro */
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-blue-800 {
+    color: #1c3d5a;
+  }
+  
+  .text-blue-900 {
+    color: #1a202c;
+  }
+  
   .bg-blue-50 {
     background-color: #ebf8ff;
+  }
+  
+  /* Columna ID en negrita */
+  .font-bold {
+    font-weight: bold;
+    color: #1a202c; /* Color de texto oscuro */
+  }
+  
+  /* Encerrar cada ID con un borde */
+  .border-2 {
+    border: 2px solid #e2e8f0;
+  }
+  
+  .rounded-lg {
+    border-radius: 8px;
+  }
+  
+  /* Espacio entre registros */
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+  
+  /* Botones */
+  button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color;
   }
   </style>
   

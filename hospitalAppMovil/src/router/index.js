@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 //IMPORTACIONES DE LAS VISTAS
 import LoginView from '../components/loginInicio.vue';
-import RegistroUser from '../components/registroUser.vue';
+
 import PerfilUsuario from '../components/perfilUsuario.vue';
 //Recursos humanos
 import AreasMedicas from '../components/recursos_humanos/AreasMedicas.vue';
@@ -14,6 +14,7 @@ import RegistroAreasMedicas from '../components/Registros/registroAreasMedicas.v
 import RegistroPersona from '../components/Registros/registroPersona.vue';
 import RegistroHorarios from '../components/Registros/registroHorarios.vue';
 import RegistroPersonalMedico from '../components/Registros/registroPersonalMedico.vue';
+import RegistroUser from '../components/Registros/registroUser.vue';
 
 const routes= [
  {

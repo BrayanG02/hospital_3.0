@@ -40,3 +40,4 @@ assets/
 -----------------------------------------------------------
 instalar chart
 npm install chart.js --save
+

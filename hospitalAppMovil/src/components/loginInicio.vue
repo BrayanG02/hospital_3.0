@@ -1,4 +1,5 @@
 <template>
+  <ion-app>
   <ion-page>
   <ion-content>
   <div class="container">
@@ -10,49 +11,43 @@
 
     <!-- Contenido del formulario -->
     <ion-card-content>
-      <ion-button  class="myButton" fill="outline"  @click="signInWithGoogle">
+      <ion-button class="myButton" fill="outline">
         <ion-icon slot="start" name="logo-google"></ion-icon>
         INICIA SESIÓN CON GOOGLE
       </ion-button>
-
       <div>O inicia sesión con tu email</div>
 
       <ion-item>
-        <ion-select label="Selecciona un Rol" label-placement="floating">
-          <ion-select-option value="Paciente">Paciente</ion-select-option>
-          <ion-select-option value="Medico">Medico</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
         <ion-input
-          v-model="usuario"
+          v-model="usuario.Correo_Electronico"
           type="email"
           required
           label="Email"
           label-placement="floating"
           placeholder="Escribe tu email"
+          
         ></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-input
-          v-model="usuario"
+          v-model="usuario.Contrasena"
           type="password"
           required
           label="Contraseña"
           label-placement="floating"
           placeholder="Escribe tu contraseña"
+          
         ></ion-input>
       </ion-item>
 
-      <RouterLink to="/dashboardPersonalMedico">
-        <ion-button class="myButton" fill="outline" @click="signIn">
+      
+        <ion-button class="myButton" fill="outline" expand="block" @click="login">
           INICIAR SESIÓN
         </ion-button>
-      </RouterLink>
+      
 
-      <RouterLink to="/RegisterUser">
+      <RouterLink to="/RegistroPersona">
         <ion-button class="myButton" fill="outline" @click="register">
           O REGÍSTRATE
         </ion-button>
@@ -62,9 +57,11 @@
  </div>
  </ion-content>
  </ion-page>
+</ion-app>
 </template>
 
 <script>
+import axios from "axios";
 import {
   IonPage,
   IonContent,
@@ -75,9 +72,11 @@ import {
   IonSelect,
   IonSelectOption,
   IonIcon,
+  IonAlert
 } from '@ionic/vue';
 
 export default {
+  name: 'Login',
   components: {
     IonPage,
     IonContent,
@@ -88,21 +87,68 @@ export default {
     IonSelect,
     IonSelectOption,
     IonIcon,
+    IonAlert
+  },
+  data() {
+    return {
+      usuario: {
+        Nombre_Usuario: "", // Puede estar vacío si no se usa
+        Correo_Electronico: "",
+        Numero_Telefonico_Movil: "", // Puede estar vacío si no se usa
+        Contrasena: "",
+      },
+      token: null,
+    };
   },
   methods: {
-    signInWithGoogle() {
-      console.log('Sign in with Google');
+    async login() {
+      console.log('Iniciando sesión...');
+      
+      if (!this.usuario.Correo_Electronico || !this.usuario.Contrasena) {
+        console.log('Campos vacíos');
+        return this.showAlert('Error', 'Por favor, completa todos los campos.');
+      }
+
+      try {
+    const response = await axios.post('https://privilegecare-deploy-gqmt.onrender.com/login/', {
+      Nombre_Usuario: this.usuario.Nombre_Usuario,
+      Correo_Electronico: this.usuario.Correo_Electronico,
+      Numero_Telefonico_Movil: this.usuario.Numero_Telefonico_Movil,
+      Contrasena: this.usuario.Contrasena,
+    });
+    console.log('Respuesta del servidor:', response.data);
+
+
+    this.token = response.data; // Almacena el token en el estado
+    localStorage.setItem("token", this.token);
+
+        const { token } = response.data;
+        
+        if (this.token) {
+          localStorage.setItem('authToken', this.token); // Almacena el token
+          console.log('Token almacenado:', this.token);
+          this.$router.push('/dashboardPersonalMedico'); // Redirige a la página principal
+        } else {
+          this.showAlert('Error', 'Credenciales incorrectas.');
+        }
+      } catch (error) {
+        console.error(error);
+        this.showAlert('Error', 'No se pudo conectar al servidor.');
+      }
     },
-    signIn() {
-      console.log('Sign in');
-      this.$root.isAuthenticated = true;
-      this.$router.push('/');
-    },
-    register() {
-      console.log('Register');
+    // Método para mostrar alertas
+    async showAlert(header, message) {
+      const alert = await this.$ionic.alert.create({
+        header: header,
+        message: message,
+        buttons: ['OK'],
+      });
+      await alert.present();
     },
   },
+
 };
+
 </script>
 
 <style scoped>
