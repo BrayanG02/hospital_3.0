@@ -3,5 +3,11 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "vue-vite"
+  "type": "vue-vite",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://privilegecare-deploy-gqmt.onrender.com"
+    }
+  ]
 }
