@@ -92,7 +92,9 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 ![image](https://github.com/user-attachments/assets/79aa180a-2355-4e5c-9388-32eda43690c6)
 ![image](https://github.com/user-attachments/assets/e435c087-96d0-4f15-9697-bbcd0dbcc603)
 
-
+# ACCESO A LA APP MOVIL
+ usuario: 230893@utxicotepec.edu.mx
+ contraseña: Pollo123
 # PROTOTIPO (NO FUNCIONAL)
 | ICONO DE APP | SPLASH SCREEN | LOGIN SCREEN |
 |------------------------|------------------------|------------------------|
