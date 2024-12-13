@@ -8,62 +8,32 @@
 
     <ion-content>
       <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
-
         <!-- Tabla Áreas Médicas -->
         <table class="w-full border-collapse">
           <tbody>
             <tr v-for="item in data" :key="item.ID" class="border-b">
-              <!-- Fila de la tabla con datos -->
               <td class="p-4 border-t">
-                <!-- Encerrar cada área en un bloque -->
                 <div class="border-2 border-blue-200 p-4 rounded-lg mb-4 bg-blue-50">
-                  
-                  <!-- Columna ID (en negrita) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>ID</strong></div>
-                    <div class="md:w-5/6 font-bold text-blue-900">{{ item.ID }}</div>
+                  <!-- Nombre -->
+                  <div class="md:flex justify-between items-center border-b pb-4">
+                    <div class="font-semibold text-sm text-blue-800"><strong>Nombre</strong></div>
+                    <div class="text-sm text-blue-900">{{ item.Nombre }}</div>
                   </div>
-
-                  <!-- Columna Nombre (en negrita) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Nombre</strong></div>
-                    <div class="md:w-5/6 text-sm text-blue-900">{{ item.Nombre }}</div>
+                  <!-- Descripción -->
+                  <div class="md:flex justify-between items-center border-b pb-4">
+                    <div class="font-semibold text-sm text-blue-800"><strong>Descripción</strong></div>
+                    <div class="text-sm text-blue-900">{{ item.Descripcion }}</div>
                   </div>
-
-                  <!-- Columna Descripción (en negrita) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Descripción</strong></div>
-                    <div class="md:w-5/6 text-sm text-blue-900">{{ item.Descripcion }}</div>
+                  <!-- Estatus -->
+                  <div class="md:flex justify-between items-center border-b pb-4">
+                    <div class="font-semibold text-sm text-blue-800"><strong>Estatus</strong></div>
+                    <span :class="item.Estatus === 'Activo' ? 'bg-green-500' : 'bg-red-500'"
+                      class="text-white py-1 px-3 rounded-full text-xs">
+                      {{ item.Estatus }}
+                    </span>
                   </div>
-
-                  <!-- Columna Estatus (en negrita) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Estatus</strong></div>
-                    <div class="md:w-5/6">
-                      <span :class="{
-                        'bg-green-500': item.Estatus === 'Activo',
-                        'bg-red-500': item.Estatus === 'Inactivo'
-                      }" class="text-white py-1 px-3 rounded-full text-xs">
-                        {{ item.Estatus }}
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- Columna Fecha Registro (en negrita) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0 border-b pb-4">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Registro</strong></div>
-                    <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Registro).toLocaleDateString() }}</div>
-                  </div>
-
-                  <!-- Columna Fecha Actualización (en negrita) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0">
-                    <div class="md:w-1/6 font-semibold text-sm text-blue-800"><strong>Fecha Actualización</strong></div>
-                    <div class="md:w-5/6 text-sm text-blue-900">{{ new Date(item.Fecha_Actualizacion).toLocaleDateString() }}</div>
-                  </div>
-
-                  <!-- Botones de acción con solo iconos (SVG personalizados) -->
-                  <div class="md:flex justify-between items-center space-y-4 md:space-y-0 mt-4">
-                    <!-- Botón Editar con solo el icono SVG -->
+                  <!-- Botones de acción -->
+                  <div class="flex justify-between items-center mt-4">
                     <button @click="editar(item.ID)" 
                       class="text-white p-3 rounded-full mx-1 transition-all"
                       style="background-color: #fbbf24;" 
@@ -74,20 +44,10 @@
                         <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
                       </svg>
                     </button>
-
-                    <!-- Botón Eliminar con solo el icono SVG -->
-                    <button @click="eliminar(item.ID)" class="bg-red-500 text-white p-3 rounded-full mx-1 hover:bg-red-600 transition-all">
+                    <button @click="eliminar(item.ID)" class="bg-red-500 text-white p-3 rounded-full mx-1 hover:bg-red-600">
                       <!-- Icono de Eliminar -->
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
-                        <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
-                      </svg>
-                    </button>
-
-                    <!-- Botón Actualizar con solo el icono SVG -->
-                    <button @click="actualizar(item.ID)" class="bg-green-500 text-white p-3 rounded-full mx-1 hover:bg-green-600 transition-all">
-                      <!-- Icono de Actualizar -->
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
-                        <path d="M480-120q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-480q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q82 0 155.5 35T760-706v-94h80v240H600v-80h110q-41-56-101-88t-129-32q-117 0-198.5 81.5T200-480q0 117 81.5 198.5T480-200q105 0 183.5-68T756-440h82q-15 137-117.5 228.5T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/>
+                      <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
                       </svg>
                     </button>
                   </div>
@@ -96,72 +56,139 @@
             </tr>
           </tbody>
         </table>
-
       </div>
+
+<!-- Modal para Editar -->
+<ion-modal :is-open="isEditing" @ionModalDidDismiss="closeModal">
+  <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="w-full max-w-md p-6 bg-white dark:bg-gray-800 shadow-2xl rounded-lg transform transition-all scale-100">
+      <h2>Editar Área Médica</h2>
+      <form @submit.prevent="guardarCambios">
+        <div class="mb-4">
+          <label for="nombre">Nombre:</label><br>
+          <input
+            v-model="formData.Nombre"
+            class="w-full p-3 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none dark:focus:ring-blue-400"
+            type="text"
+            id="nombre"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="descripcion">Descripción</label><br>
+          <textarea
+            v-model="formData.Descripcion"
+            class="w-full p-3 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none dark:focus:ring-blue-400"
+            id="descripcion"
+            required
+          ></textarea>
+        </div>
+        <div class="mb-6">
+          <label for="estatus">Estatus</label><br>
+          <select
+            v-model="formData.Estatus"
+            class="w-full p-3 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none dark:focus:ring-blue-400"
+            id="estatus"
+            required
+          >
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+        <div class="flex justify-end space-x-4">
+          <button
+            type="button"
+            @click="closeModal"
+            class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+          >
+            Guardar Cambios
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-modal>
+
+
+
     </ion-content>
   </ion-app>
 </template>
 
 <script>
-import { IonApp, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonApp, IonHeader, IonToolbar, IonTitle, IonContent, IonModal } from "@ionic/vue";
+import axios from "axios";
+
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6ImJyYXlhbiIsIkNvcnJlb19FbGVjdHJvbmljbyI6IjIzMDg5M0B1dHhpY290ZXBlYy5lZHUubXgiLCJDb250cmFzZW5hIjoiUG9sbG8xMjMiLCJOdW1lcm9fVGVsZWZvbmljb19Nb3ZpbCI6Ijc0NjExODYxNDIifQ.8VyAOe8EjYtXpBDyDDAPwRERYFJ5lYI1kSYWnaGZd9I";
 
 export default {
-  name: 'AreaMedicaPage',
-  components: {
-    IonApp, IonHeader, IonToolbar, IonTitle, IonContent
-  },
+  name: "AreaMedicaPage",
+  components: { IonApp, IonHeader, IonToolbar, IonTitle, IonContent, IonModal },
   data() {
     return {
-      // Datos de áreas médicas
-      data: [
-        {
-          ID: 1,
-          Nombre: 'Área de Cardiología',
-          Descripcion: 'Especializada en enfermedades del corazón.',
-          Estatus: 'Activo',
-          Fecha_Registro: '2024-01-10T08:00:00Z',
-          Fecha_Actualizacion: '2024-02-15T12:00:00Z'
-        },
-        {
-          ID: 2,
-          Nombre: 'Área de Neurología',
-          Descripcion: 'Tratamiento de trastornos del sistema nervioso.',
-          Estatus: 'Inactivo',
-          Fecha_Registro: '2023-06-20T08:00:00Z',
-          Fecha_Actualizacion: '2023-09-10T14:00:00Z'
-        },
-        {
-          ID: 3,
-          Nombre: 'Área de Oncología',
-          Descripcion: 'Especialidad en el tratamiento del cáncer.',
-          Estatus: 'Activo',
-          Fecha_Registro: '2024-03-01T08:00:00Z',
-          Fecha_Actualizacion: '2024-03-05T10:00:00Z'
-        },
-        {
-          ID: 4,
-          Nombre: 'Área de Dermatología',
-          Descripcion: 'Enfermedades de la piel y sus cuidados.',
-          Estatus: 'Activo',
-          Fecha_Registro: '2024-02-10T08:00:00Z',
-          Fecha_Actualizacion: '2024-02-20T09:30:00Z'
-        }
-      ]
+      data: [],
+      isEditing: false,
+      formData: { Nombre: "", Descripcion: "", Estatus: "" },
     };
   },
+  mounted() {
+    this.obtenerAreaMedica();
+  },
   methods: {
+    async obtenerAreaMedica() {
+      try {
+        const response = await axios.get("https://privilegecare-deploy-gqmt.onrender.com/areas_medicas/", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        this.data = response.data;
+      } catch (error) {
+        console.error("Error al obtener los datos:", error);
+      }
+    },
     editar(id) {
-      alert(`Editar área con ID: ${id}`);
+      const areaMedica = this.data.find((item) => item.ID === id);
+      if (areaMedica) {
+        this.formData = { ...areaMedica };
+        this.isEditing = true;
+      }
     },
-    eliminar(id) {
-      alert(`Eliminar área con ID: ${id}`);
+    async guardarCambios() {
+      try {
+        const response = await axios.put(
+          `https://privilegecare-deploy-gqmt.onrender.com/area_medica/${this.formData.ID}`,
+          this.formData,
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        const index = this.data.findIndex((item) => item.ID === this.formData.ID);
+        if (index !== -1) this.data[index] = response.data;
+        this.isEditing = false;
+      } catch (error) {
+        console.error("Error al guardar los cambios:", error);
+      }
     },
-    actualizar(id) {
-      alert(`Actualizar área con ID: ${id}`);
-    }
-  }
-}
+    async eliminar(id) {
+      try {
+        await axios.delete(`https://privilegecare-deploy-gqmt.onrender.com/area_medica/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        this.data = this.data.filter((item) => item.ID !== id);
+      } catch (error) {
+        console.error("Error al eliminar:", error);
+      }
+    },
+    closeModal() {
+      this.isEditing = false;
+    },
+  },
+};
 </script>
+
 
 <style scoped>
 /* Estilo general para la tabla */
@@ -241,4 +268,6 @@ button {
   cursor: pointer;
   transition: background-color;
 }
+
+
 </style>

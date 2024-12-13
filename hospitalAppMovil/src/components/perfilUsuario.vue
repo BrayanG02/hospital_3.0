@@ -1,105 +1,166 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <ion-title>Perfil</ion-title>
+      <ion-toolbar color="primary">
+        <ion-title>Perfil de Usuario</ion-title>
       </ion-toolbar>
     </ion-header>
+    
     <ion-content>
       <div class="profile-container">
-        <ion-avatar>
-          <img :src="user.photo" alt="Foto de perfil">
-        </ion-avatar>
-        <h6>Sube una foto diferente...</h6> 
-        <input type="file" class="text-center center-block file-upload" @change="onFileChange" />
         <ion-list>
           <ion-item>
-            <ion-label position="floating">Nombre</ion-label>
-            <ion-input v-model="user.name"></ion-input>
+            <ion-input
+              v-model="user.Nombre_Usuario"
+              readonly
+              label="Nombre de Usuario"
+              label-placement="floating">
+            </ion-input>
           </ion-item>
+
           <ion-item>
-            <ion-label position="floating">Correo Electrónico</ion-label>
-            <ion-input v-model="user.email" type="email"></ion-input>
+            <ion-input
+              v-model="user.Correo_Electronico"
+              readonly
+              label="Correo electrónico"
+              label-placement="floating">
+            </ion-input>
           </ion-item>
+
           <ion-item>
-            <ion-label position="floating">Rol</ion-label>
-            <ion-input v-model="user.role"></ion-input>
+            <ion-input
+              v-model="user.Estatus"
+              readonly
+              label="Estatus"
+              label-placement="floating">
+            </ion-input>
           </ion-item>
+
           <ion-item>
-            <ion-label position="floating">Contraseña</ion-label>
-            <ion-input v-model="user.password" type="password"></ion-input>
+            <ion-input
+              v-model="user.Fecha_Registro"
+              readonly
+              label="Fecha de Registro"
+              label-placement="floating">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input
+              v-model="user.Numero_Telefonico_Movil"
+              readonly
+              label="Número de Teléfono"
+              label-placement="floating">
+            </ion-input>
           </ion-item>
         </ion-list>
-
-        <ion-button class="myButton" fill="outline" @click="saveProfile">
-          Guardar Cambios
-        </ion-button>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
+
 <script>
+import {
+  IonPage,
+  IonContent,
+  IonButton,
+  IonLabel,
+  IonItem,
+  IonInput,
+  IonSelect,
+  IonSelectOption,
+  IonIcon,
+} from '@ionic/vue';
+import axios from 'axios';
+
 export default {
-  name: 'ProfileView',
+  name: 'Login',
+  components: {
+    IonPage,
+    IonContent,
+    IonButton,
+    IonLabel,
+    IonItem,
+    IonInput,
+    IonSelect,
+    IonSelectOption,
+    IonIcon,
+  },
   data() {
     return {
       user: {
-        photo: 'https://w7.pngwing.com/pngs/882/225/png-transparent-google-logo-google-logo-google-search-icon-google-text-logo-business-thumbnail.png', // URL de la foto de perfil
-        name: '',
-        email: '',
-        role: '',
-        password: ''
-      }
-    }
+      },
+      token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6ImJyYXlhbiIsIkNvcnJlb19FbGVjdHJvbmljbyI6IjIzMDg5M0B1dHhpY290ZXBlYy5lZHUubXgiLCJDb250cmFzZW5hIjoiUG9sbG8xMjMiLCJOdW1lcm9fVGVsZWZvbmljb19Nb3ZpbCI6Ijc0NjExODYxNDIifQ.8VyAOe8EjYtXpBDyDDAPwRERYFJ5lYI1kSYWnaGZd9I", // Asegúrate de 
+      ID: 5,
+    };
+  },
+  created() {
+    this.fetchPersonaID();
   },
   methods: {
-    saveProfile() {
-      // Aquí puedes implementar la lógica para guardar los cambios del perfil
-      console.log('Perfil guardado:', this.user);
-      // Puedes realizar una llamada a una API para guardar los datos en el servidor, por ejemplo
+    async fetchPersonaID() {
+      try {
+        const response = await axios.get('https://privilegecare-deploy-gqmt.onrender.com/users/',
+          {
+            headers: {
+              Authorization: `Bearer ${this.token}`
+          }
+        }
+      );
+        const users = response.data;
+        console.log('Datos de usuarios:', users);
+        this.user = users.find(
+          (u) => u.ID === this.ID
+        ); // Encuentra el usuario con el ID especificado
+        if (!this.user) {
+          console.error("Usuario no encontrado");
+        }
+      } catch (error) {
+        console.error("Error al obtener los datos del usuario:", error);
+      }
     },
-    onFileChange(event) { const file = event.target.files[0]; const reader = new FileReader(); reader.onload = (e) =>
-      {
-        this.user.photo = e.target.result; 
-      }; reader.readAsDataURL(file); 
     },
-  }
-}
+};
 </script>
 
-<style>
+<style scoped>
+/* Estilos generales para la página */
 .profile-container {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  justify-content: center;
+ /* Fondo suave */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-ion-avatar {
-  margin-bottom: 20px;
-  --size: 100px;
-}
+
 ion-list {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px; /* Limita el ancho de la lista */
 }
 
-.myButton {
-  --background:    #001F3F; /* Fondo morado */
-  --color: white; /* Texto blanco */
-  --border-radius: 12px; /* Bordes redondeados */
-  --padding-start: 20px; /* Espaciado interno para texto */
-  --padding-end: 20px;
-  --height: 50px; /* Altura fija para diseño móvil */
-  font-size: 16px; /* Tamaño de texto más grande para táctiles */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  text-transform: uppercase; /* Texto en mayúsculas */
-  transition: background-color 0.2s ease, transform 0.2s ease;
+ion-item {
+  background-color: #ffffff; /* Fondo blanco para los items */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Efecto de presión en el botón */
-.myButton:active {
-  transform: scale(0.96); /* Leve reducción de tamaño */
-  --background: #5379d0; /* Fondo más oscuro al presionar */
+ion-input {
+  --padding-start: 15px;
+  --padding-end: 15px;
+}
+
+/* Ajustes de los labels */
+ion-label {
+  color: #333;
+  font-weight: 500;
+}
+
+ion-input[readonly] {
+  color: #666;
 }
 </style>

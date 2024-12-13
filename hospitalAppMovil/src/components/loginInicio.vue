@@ -9,6 +9,17 @@
       <img src="../../buttons/icono2.png" class="logo" alt="Icono principal" />
     </div>
 
+    <ion-content>
+      <p>Cargando datos...</p>
+
+      <ion-loading
+        :is-open="loading"
+        message="Cargando contenido..."
+        spinner="circles"
+        @didDismiss="loading = false"
+      ></ion-loading>
+    </ion-content>
+
     <!-- Contenido del formulario -->
     <ion-card-content>
       <ion-button class="myButton" fill="outline">
@@ -25,7 +36,6 @@
           label="Email"
           label-placement="floating"
           placeholder="Escribe tu email"
-          
         ></ion-input>
       </ion-item>
 
@@ -62,6 +72,7 @@
 
 <script>
 import axios from "axios";
+import { ref, onMounted } from 'vue';
 import {
   IonPage,
   IonContent,
@@ -72,8 +83,8 @@ import {
   IonSelect,
   IonSelectOption,
   IonIcon,
-  IonAlert
 } from '@ionic/vue';
+import { alertController } from '@ionic/vue';
 
 export default {
   name: 'Login',
@@ -87,14 +98,13 @@ export default {
     IonSelect,
     IonSelectOption,
     IonIcon,
-    IonAlert
   },
   data() {
     return {
       usuario: {
-        Nombre_Usuario: "", // Puede estar vacío si no se usa
+        Nombre_Usuario: "",
         Correo_Electronico: "",
-        Numero_Telefonico_Movil: "", // Puede estar vacío si no se usa
+        Numero_Telefonico_Movil: "",
         Contrasena: "",
       },
       token: null,
@@ -102,32 +112,27 @@ export default {
   },
   methods: {
     async login() {
-      console.log('Iniciando sesión...');
-      
+      this.showAlert('Iniciando sesion...');
       if (!this.usuario.Correo_Electronico || !this.usuario.Contrasena) {
-        console.log('Campos vacíos');
         return this.showAlert('Error', 'Por favor, completa todos los campos.');
       }
 
       try {
-    const response = await axios.post('https://privilegecare-deploy-gqmt.onrender.com/login/', {
-      Nombre_Usuario: this.usuario.Nombre_Usuario,
-      Correo_Electronico: this.usuario.Correo_Electronico,
-      Numero_Telefonico_Movil: this.usuario.Numero_Telefonico_Movil,
-      Contrasena: this.usuario.Contrasena,
-    });
-    console.log('Respuesta del servidor:', response.data);
+        const response = await axios.post('https://privilegecare-deploy-gqmt.onrender.com/login/', {
+          Nombre_Usuario: this.usuario.Nombre_Usuario,
+          Correo_Electronico: this.usuario.Correo_Electronico,
+          Numero_Telefonico_Movil: this.usuario.Numero_Telefonico_Movil,
+          Contrasena: this.usuario.Contrasena,
+        });
 
-
-    this.token = response.data; // Almacena el token en el estado
-    localStorage.setItem("token", this.token);
+        this.token = response.data; 
+        localStorage.setItem("token", this.token);
 
         const { token } = response.data;
         
         if (this.token) {
-          localStorage.setItem('authToken', this.token); // Almacena el token
-          console.log('Token almacenado:', this.token);
-          this.$router.push('/dashboardPersonalMedico'); // Redirige a la página principal
+          localStorage.setItem('authToken', this.token);
+          this.$router.push('/dashboardPersonalMedico');
         } else {
           this.showAlert('Error', 'Credenciales incorrectas.');
         }
@@ -135,10 +140,10 @@ export default {
         console.error(error);
         this.showAlert('Error', 'No se pudo conectar al servidor.');
       }
+      this.$root.isAuthenticated = true;
     },
-    // Método para mostrar alertas
     async showAlert(header, message) {
-      const alert = await this.$ionic.alert.create({
+      const alert = await alertController.create({
         header: header,
         message: message,
         buttons: ['OK'],
@@ -146,10 +151,9 @@ export default {
       await alert.present();
     },
   },
-
 };
-
 </script>
+
 
 <style scoped>
 /* Estilo principal del contenedor */

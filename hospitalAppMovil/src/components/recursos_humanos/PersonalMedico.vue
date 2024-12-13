@@ -111,89 +111,171 @@
                         <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
                       </svg>
                     </button>
-
-                    <!-- Botón Actualizar con solo el icono SVG -->
-                    <button @click="actualizar(item.Persona_ID)" class="bg-green-500 text-white p-3 rounded-full mx-1 hover:bg-green-600 transition-all">
-                      <!-- Icono de Actualizar -->
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
-                        <path d="M480-120q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-480q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q82 0 155.5 35T760-706v-94h80v240H600v-80h110q-41-56-101-88t-129-32q-117 0-198.5 81.5T200-480q0 117 81.5 198.5T480-200q105 0 183.5-68T756-440h82q-15 137-117.5 228.5T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/>
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-
       </div>
+
+       <!-- Modal para Editar -->
+       <ion-modal :is-open="isEditing" @ionModalDidDismiss="closeModal">
+        <div class="p-4 bg-white shadow-lg rounded-lg mx-4 md:mx-10 mt-4">
+          <h2>Editar Personal Médico</h2>
+          <form @submit.prevent="guardarCambios">
+            <div class="mb-4">
+              <label for="departamento">Departamento ID</label><br>
+              <input v-model="formData.Departamento_ID" class="w-full p-2 border rounded-lg" type="number" id="departamento" required />
+            </div>
+            <div class="mb-4">
+              <label for="cedula">Cédula Profesional</label><br>
+              <input v-model="formData.Cedula_Profesional" class="w-full p-2 border rounded-lg" type="number" id="cedula" required />
+            </div>
+            <div class="mb-6">
+          <label for="estatus">Tipo</label><br>
+          <select
+            v-model="formData.Tipo"
+            class="w-full p-3 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none dark:focus:ring-blue-400"
+            id="estatus"
+            required
+          >
+            <option value="Médico">Médico</option>
+            <option value="Enfermero">Enfermero</option>
+            <option value="Administrativo">Administrativo</option>
+            <option value="Directivo">Directivo</option>
+            <option value="Apoyo">Apoyo</option>
+            <option value="Directivo">Directivo</option>
+            <option value="Interno">Interno</option>
+          </select>
+        </div>
+            <div class="mb-4">
+              <label for="especialidad">Especialidad</label><br>
+              <input v-model="formData.Especialidad" class="w-full p-2 border rounded-lg" type="text" id="especialidad" required />
+            </div>
+            <div class="mb-4">
+              <label for="salario">Salario</label><br>
+              <input v-model="formData.Salario" class="w-full p-2 border rounded-lg" type="number" id="salario" required />
+            </div>
+            <div class="mb-6">
+          <label for="estatus">Estatus</label><br>
+          <select
+            v-model="formData.Estatus"
+            class="w-full p-3 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none dark:focus:ring-blue-400"
+            id="estatus"
+            required
+          >
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+
+          <div class="flex justify-end space-x-4">
+          <button
+            type="button"
+            @click="closeModal"
+            class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+          >
+            Guardar Cambios
+          </button>
+        </div>
+          </form>
+        </div>
+      </ion-modal>
+
+
+
     </ion-content>
   </ion-app>
 </template>
 
 <script>
-import { IonApp, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonApp, IonHeader, IonToolbar, IonTitle, IonContent, IonModal } from '@ionic/vue';
+import axios from "axios";
+
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6ImJyYXlhbiIsIkNvcnJlb19FbGVjdHJvbmljbyI6IjIzMDg5M0B1dHhpY290ZXBlYy5lZHUubXgiLCJDb250cmFzZW5hIjoiUG9sbG8xMjMiLCJOdW1lcm9fVGVsZWZvbmljb19Nb3ZpbCI6Ijc0NjExODYxNDIifQ.8VyAOe8EjYtXpBDyDDAPwRERYFJ5lYI1kSYWnaGZd9I";
 
 export default {
   name: 'AreaMedicaPage',
   components: {
-    IonApp, IonHeader, IonToolbar, IonTitle, IonContent
+    IonApp, IonHeader, IonToolbar, IonTitle, IonContent, IonModal
   },
   data() {
     return {
-      // Datos estáticos con todos los campos
-      data: [
-        {
-          Persona_ID: 1,
-          Departamento_ID: 101,
-          Cedula_Profesional: '1234567',
-          Tipo: 'Médico',
-          Especialidad: 'Cardiología',
-          Fecha_Registro: '2024-01-10T08:00:00Z',
-          Fecha_Contratacion: '2024-02-01T08:00:00Z',
-          Fecha_Termino_Contrato: '2025-02-01T08:00:00Z',
-          Salario: 50000,
-          Estatus: 'Activo',
-          Fecha_Actualizacion: '2024-03-01T10:00:00Z'
-        },
-        {
-          Persona_ID: 2,
-          Departamento_ID: 102,
-          Cedula_Profesional: '7654321',
-          Tipo: 'Médico',
-          Especialidad: 'Neurología',
-          Fecha_Registro: '2023-06-20T08:00:00Z',
-          Fecha_Contratacion: '2023-07-15T08:00:00Z',
-          Fecha_Termino_Contrato: '2024-07-15T08:00:00Z',
-          Salario: 55000,
-          Estatus: 'Inactivo',
-          Fecha_Actualizacion: '2023-09-10T14:00:00Z'
-        },
-        {
-          Persona_ID: 3,
-          Departamento_ID: 103,
-          Cedula_Profesional: '1112223',
-          Tipo: 'Médico',
-          Especialidad: 'Oncología',
-          Fecha_Registro: '2024-03-01T08:00:00Z',
-          Fecha_Contratacion: '2024-04-01T08:00:00Z',
-          Fecha_Termino_Contrato: '2025-04-01T08:00:00Z',
-          Salario: 60000,
-          Estatus: 'Activo',
-          Fecha_Actualizacion: '2024-03-10T14:00:00Z'
-        }
-      ]
+      data: [],
+      isEditing: false,  // Controla si estamos en modo edición
+      formData: {
+        Persona_ID: null,
+        Departamento_ID: '',
+        Cedula_Profesional: '',
+        Tipo: '',
+        Especialidad: '',
+        Salario: ''
+      }
     };
   },
+  mounted() {
+    this.obtenerPersonalMedico(); // Cargar los datos al montar el componente
+  },
   methods: {
+    async obtenerPersonalMedico() {
+      try {
+        const response = await axios.get('https://privilegecare-deploy-gqmt.onrender.com/personal_medico/', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        this.data = response.data;
+      } catch (error) {
+        console.error("Error al obtener los datos:", error);
+      }
+    },
+
     editar(id) {
-      alert(`Editar persona con ID: ${id}`);
+      const persona = this.data.find(item => item.Persona_ID === id);
+      if (persona) {
+        this.formData = { ...persona };  // Llenar el formulario con los datos de la persona
+        this.isEditing = true;  // Activar el modo de edición
+      }
     },
+
+    async guardarCambios() {
+      try {
+        const response = await axios.put(`https://privilegecare-deploy-gqmt.onrender.com/personal_medico/${this.formData.Persona_ID}`, this.formData, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        // Actualizar los datos localmente
+        const index = this.data.findIndex(item => item.Persona_ID === this.formData.Persona_ID);
+        if (index !== -1) {
+          this.data[index] = response.data;
+        }
+        this.isEditing = false;  // Cerrar el modal
+      } catch (error) {
+        console.error("Error al guardar los cambios:", error);
+      }
+    },
+
     eliminar(id) {
-      alert(`Eliminar persona con ID: ${id}`);
+      this.eliminarPersonalMedico(id);
     },
-    actualizar(id) {
-      alert(`Actualizar persona con ID: ${id}`);
+
+    async eliminarPersonalMedico(id) {
+      try {
+        await axios.delete(`https://privilegecare-deploy-gqmt.onrender.com/personal_medico/${id}`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        this.data = this.data.filter(item => item.Persona_ID !== id);
+      } catch (error) {
+        console.error("Error al eliminar el personal médico:", error);
+      }
+    },
+
+    closeModal() {
+      this.isEditing = false;  // Cerrar el modal
     }
   }
 }

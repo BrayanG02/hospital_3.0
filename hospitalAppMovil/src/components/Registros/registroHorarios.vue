@@ -12,6 +12,15 @@
 
         <ion-card-content>
 
+          <ion-item>
+            <ion-input
+              v-model="nuevoHorario.empleado_id"
+              label="Empleado ID"
+              label-placement="floating"
+              placeholder="ID del empleado"
+            ></ion-input>
+          </ion-item>
+
           <!-- Nombre del empleado -->
           <ion-item>
             <ion-input
@@ -89,6 +98,29 @@
               label="Sala"
               label-placement="floating"
               placeholder="Nombre de la sala"
+              type="number"
+            ></ion-input>
+          </ion-item>
+
+           <!-- Fecha de Registro -->
+           <ion-item>
+            <ion-input
+              v-model="nuevoHorario.fecha_creacion"
+              label="Fecha de Registro"
+              label-placement="floating"
+              type="date"
+              placeholder="(YYYY-MM-DD)"
+            ></ion-input>
+          </ion-item>
+
+           <!-- Fecha de Registro -->
+           <ion-item>
+            <ion-input
+              v-model="nuevoHorario.fecha_actualizacion"
+              label="Fecha de Registro"
+              label-placement="floating"
+              type="date"
+              placeholder="(YYYY-MM-DD)"
             ></ion-input>
           </ion-item>
 
@@ -106,6 +138,8 @@
 </template>
 
 <script>
+import { alertController } from '@ionic/vue'; // Asegúrate de importarlo correctamente
+import axios from 'axios';
 import {
   IonApp,
   IonContent,
@@ -116,6 +150,8 @@ import {
   IonSelectOption,
   IonCardContent
 } from '@ionic/vue';
+
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6ImJyYXlhbiIsIkNvcnJlb19FbGVjdHJvbmljbyI6IjIzMDg5M0B1dHhpY290ZXBlYy5lZHUubXgiLCJDb250cmFzZW5hIjoiUG9sbG8xMjMiLCJOdW1lcm9fVGVsZWZvbmljb19Nb3ZpbCI6Ijc0NjExODYxNDIifQ.8VyAOe8EjYtXpBDyDDAPwRERYFJ5lYI1kSYWnaGZd9I";
 
 export default {
   components: {
@@ -132,34 +168,48 @@ export default {
   data() {
     return {
       nuevoHorario: {
-        empleado_id: 0,
+        empleado_id: '',
         nombre: '',
         especialidad: '',
         dia_semana: '',
         hora_inicio: '',
         hora_fin: '',
-        turno: 'Mañana',
+        turno: '',
         nombre_departamento: '',
         nombre_sala: '',
         fecha_creacion: new Date().toISOString().substr(0, 10),
         fecha_actualizacion: new Date().toISOString().substr(0, 10),
-        horario_id: 0
+        horario_id: ''
       }
     };
   },
 
   methods: {
-    registrarHorario() {
-      console.log('Horario registrado:', this.nuevoHorario);
+    async registrarHorario() {
+      try {
+        const response = await axios.post('https://privilegecare-deploy-gqmt.onrender.com/horario/', this.nuevoHorario, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        this.showAlert(`El registro del horario ${this.nuevoHorario.nombre} fue exitoso!`);
+        this.limpiarFormulario();
+      } catch (error) {
+        this.showAlert('Error al registrar el área médica:', error.message);
 
-      alert(`¡Registro exitoso para ${this.nuevoHorario.nombre}!`);
-
-      this.limpiarFormulario();
+        if (error.response) {
+          // Si la respuesta existe, muestra los detalles del error del servidor
+          const mensajeError = error.response.data.detail || 'Ocurrió un problema con el registro.';
+          this.showAlert(`${mensajeError}`);
+        } else if (error.request) {
+          this.showAlert('No se recibió respuesta del servidor. Verifica tu conexión.');
+        } else {
+          this.showAlert('Ocurrió un error al intentar registrar. Intenta nuevamente.');
+        }
+      }
     },
 
     limpiarFormulario() {
       this.nuevoHorario = {
-        empleado_id: 0,
+        empleado_id: '',
         nombre: '',
         especialidad: '',
         dia_semana: '',
@@ -172,7 +222,15 @@ export default {
         fecha_actualizacion: new Date().toISOString().substr(0, 10),
         horario_id: 0
       };
-    }
+    },
+    async showAlert(header, message) {
+      const alert = await alertController.create({
+        header: header,
+        message: message,
+        buttons: ['OK'],
+      });
+      await alert.present();
+    },
   }
 }
 </script>

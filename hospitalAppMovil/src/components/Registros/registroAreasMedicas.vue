@@ -1,7 +1,6 @@
 <template>
   <ion-app>
     <ion-content>
-
       <!-- Tarjeta para registrar el área médica -->
       <ion-card>
         <ion-header>
@@ -11,7 +10,6 @@
         </ion-header>
 
         <ion-card-content>
-
           <!-- Nombre del área médica -->
           <ion-item>
             <ion-input
@@ -32,18 +30,13 @@
             ></ion-input>
           </ion-item>
 
-           <!-- Estado (Etiquetas y selector de estado) -->
+          <!-- Estado (Etiquetas y selector de estado) -->
           <ion-item>
-            <ion-label position="floating" style="margin-bottom: 0px;">Estado</ion-label> <!-- Separar etiqueta con margin-bottom -->
-            <ion-select 
-              v-model="nuevaArea.Estatus" 
-              placeholder="Selecciona el estado" 
-              style="margin-top: 10px;"> <!-- Separar opciones con margin-top -->
+            <ion-select v-model="nuevaArea.Estatus" placeholder="Estatus">
               <ion-select-option value="Activo">Activo</ion-select-option>
               <ion-select-option value="Inactivo">Inactivo</ion-select-option>
             </ion-select>
           </ion-item>
-
 
           <!-- Fecha de Registro -->
           <ion-item>
@@ -71,16 +64,14 @@
           <ion-button expand="block" @click="registrarArea">
             Guardar
           </ion-button>
-
         </ion-card-content>
-
       </ion-card>
-
     </ion-content>
   </ion-app>
 </template>
 
 <script>
+import { alertController } from '@ionic/vue'; // Asegúrate de importarlo correctamente
 import {
   IonContent,
   IonButton,
@@ -91,6 +82,9 @@ import {
   IonCardContent,
   IonApp
 } from '@ionic/vue';
+import axios from 'axios';
+
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6ImJyYXlhbiIsIkNvcnJlb19FbGVjdHJvbmljbyI6IjIzMDg5M0B1dHhpY290ZXBlYy5lZHUubXgiLCJDb250cmFzZW5hIjoiUG9sbG8xMjMiLCJOdW1lcm9fVGVsZWZvbmljb19Nb3ZpbCI6Ijc0NjExODYxNDIifQ.8VyAOe8EjYtXpBDyDDAPwRERYFJ5lYI1kSYWnaGZd9I";
 
 export default {
   components: {
@@ -103,26 +97,38 @@ export default {
     IonSelectOption,
     IonCardContent,
   },
-
   data() {
     return {
       nuevaArea: {
         Nombre: '',
         Descripcion: '',
-        Estatus: 'Activo',
+        Estatus: '',
         Fecha_Registro: new Date().toISOString().substr(0, 10),
         Fecha_Actualizacion: new Date().toISOString().substr(0, 10),
       }
     };
   },
-
   methods: {
-    registrarArea() {
-      console.log('Área médica registrada:', this.nuevaArea);
+    async registrarArea() {
+      try {
+        const response = await axios.post('https://privilegecare-deploy-gqmt.onrender.com/areas_medicas/', this.nuevaArea, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        this.showAlert(`El registro de la area medica ${this.nuevaArea.Nombre} fue exitoso!`);
+        this.limpiarFormulario();
+      } catch (error) {
+        this.showAlert('Error al registrar el área médica:', error.message);
 
-      alert(`Registro del área '${this.nuevaArea.Nombre}' exitoso!`);
-
-      this.limpiarFormulario();
+        if (error.response) {
+          // Si la respuesta existe, muestra los detalles del error del servidor
+          const mensajeError = error.response.data.detail || 'Ocurrió un problema con el registro.';
+          this.showAlert(`${mensajeError}`);
+        } else if (error.request) {
+          this.showAlert('No se recibió respuesta del servidor. Verifica tu conexión.');
+        } else {
+          this.showAlert('Ocurrió un error al intentar registrar. Intenta nuevamente.');
+        }
+      }
     },
 
     limpiarFormulario() {
@@ -133,10 +139,20 @@ export default {
         Fecha_Registro: new Date().toISOString().substr(0, 10),
         Fecha_Actualizacion: new Date().toISOString().substr(0, 10),
       };
-    }
+    },
+
+    async showAlert(header, message) {
+      const alert = await alertController.create({
+        header: header,
+        message: message,
+        buttons: ['OK'],
+      });
+      await alert.present();
+    },
   }
-}
+};
 </script>
+
 
 <style scoped>
 /* Input básico */
