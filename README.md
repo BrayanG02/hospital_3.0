@@ -81,15 +81,15 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 
 # WIREFRAMES 
 ![image](https://github.com/user-attachments/assets/dde4d673-ef01-4c05-8994-51a7fa30ee63)
-![image](https://github.com/user-attachments/assets/a152bac0-8aa4-4cd9-8462-54ae4511eafd)
-![image](https://github.com/user-attachments/assets/5ec7c6a6-0e94-4900-b966-2b7a751ddf26)
-![image](https://github.com/user-attachments/assets/8177c488-8b07-4f0b-aea7-bf6b4ccfe871)
-![image](https://github.com/user-attachments/assets/88a27552-d3f3-427a-a706-53b57d2b0c26)
+![image](https://github.com/user-attachments/assets/bd60e215-e44a-42c4-9ef2-05e1a6b78b3e)
+![image](https://github.com/user-attachments/assets/4920d353-5e55-4169-bfbd-183f4bd6aed5)
+![image](https://github.com/user-attachments/assets/e901a41a-ba56-4ed6-93ac-19e9a4aab717)
+
 
 # MOCKUPS
-![image](https://github.com/user-attachments/assets/b19f92e7-f287-4e63-8064-0dc5f36d66e9)
-![image](https://github.com/user-attachments/assets/90370dfd-aa55-4341-b6e1-b4e80fcf289e)
-![image](https://github.com/user-attachments/assets/6f638b02-4be1-4a8f-85c8-ec8cf97cec11)
+![image](https://github.com/user-attachments/assets/b1014195-e2cd-4d13-bbe7-dad8cdac8fe2)
+![image](https://github.com/user-attachments/assets/79aa180a-2355-4e5c-9388-32eda43690c6)
+![image](https://github.com/user-attachments/assets/e435c087-96d0-4f15-9697-bbcd0dbcc603)
 
 # PROTOTIPO (NO FUNCIONAL)
 | ICONO DE APP | SPLASH SCREEN | LOGIN SCREEN |
