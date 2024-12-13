@@ -58,6 +58,7 @@
           <ion-item>
             <ion-input
               v-model="nuevoHorario.hora_inicio"
+              label="Hora de inicio"
               type="time"
               placeholder="Hora de Inicio"
             ></ion-input>
@@ -67,6 +68,7 @@
           <ion-item>
             <ion-input
               v-model="nuevoHorario.hora_fin"
+              label="Hora fin"
               type="time"
               placeholder="Hora de Fin"
             ></ion-input>

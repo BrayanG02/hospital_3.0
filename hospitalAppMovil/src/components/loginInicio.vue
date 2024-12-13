@@ -12,12 +12,13 @@
     <ion-content>
       <p>Cargando datos...</p>
 
-      <ion-loading
-        :is-open="loading"
-        message="Cargando contenido..."
-        spinner="circles"
-        @didDismiss="loading = false"
-      ></ion-loading>
+     <!-- Componente de Loading -->
+     <ion-loading
+          :is-open="loading"
+          message="Cargando la aplicación..."
+          spinner="lines"
+          @didDismiss="onLoadingDismiss"
+        />
     </ion-content>
 
     <!-- Contenido del formulario -->
@@ -85,7 +86,7 @@ import {
   IonIcon,
 } from '@ionic/vue';
 import { alertController } from '@ionic/vue';
-
+import { IonLoading } from '@ionic/vue';
 export default {
   name: 'Login',
   components: {
@@ -98,6 +99,20 @@ export default {
     IonSelect,
     IonSelectOption,
     IonIcon,
+    IonLoading,
+  },
+  setup() {
+    const loading = ref(true);
+    // Mostrar el loading al iniciar
+    onMounted(() => {
+      setTimeout(() => {
+        loading.value = false; // Ocultar después de 3 segundos
+      }, 3000);
+    });
+    return {
+      loading,
+      onLoadingDismiss,
+    };
   },
   data() {
     return {

@@ -5,7 +5,10 @@
         <ion-title>Recursos Humanos</ion-title>
       </ion-toolbar>
     </ion-header>
+
     <ion-content class="ion-padding">
+
+
     <ion-list>
       <ion-menu-toggle>
       <ion-item>
@@ -98,17 +101,6 @@
         </RouterLink>
       </ion-item>
     </ion-menu-toggle>
-<!--     <ion-menu-toggle>
-      <ion-item>
-        <RouterLink to="/RegistroPersona">
-          <ion-button class="myButton">
-            <img src="../buttons/registro_persona.png" class="button-icon" />
-            Registro de Persona
-          </ion-button>
-        </RouterLink> 
-      </ion-item>
-    </ion-menu-toggle> -->
-    <!-- Botón de Cerrar Sesión -->
     <ion-menu-toggle>
           <ion-item @click="logout">
             <ion-button class="myButton">
@@ -143,7 +135,7 @@
 </template>
 
 <script>
-  import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar  } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
  
