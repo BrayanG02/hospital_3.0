@@ -100,6 +100,9 @@ LINK DE LA API HOSPITAL
 
 https://privilegecare-deploy-gqmt.onrender.com/docs
 
+# Repositorio de Api Hospital
+
+https://github.com/BrayanG02/hospital_3.0.git
 
 
 # ACCESO A LA APP MOVIL
