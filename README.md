@@ -102,7 +102,7 @@ https://privilegecare-deploy-gqmt.onrender.com/docs
 
 # Repositorio de Api Hospital
 
-https://github.com/BrayanG02/hospital_3.0.git
+https://github.com/MandoCV/PrivilegeCare-Deploy
 
 
 # ACCESO A LA APP MOVIL
