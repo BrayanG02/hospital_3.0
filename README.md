@@ -92,6 +92,16 @@ Facilitar la gestión eficiente del capital humano del hospital mediante la plat
 ![image](https://github.com/user-attachments/assets/79aa180a-2355-4e5c-9388-32eda43690c6)
 ![image](https://github.com/user-attachments/assets/e435c087-96d0-4f15-9697-bbcd0dbcc603)
 
+# BACKEND
+# API (FASTAPI)
+![image](https://github.com/user-attachments/assets/a2df6c3c-9c43-4d31-be22-0389d4aca63e)
+
+LINK DE LA API HOSPITAL
+
+https://privilegecare-deploy-gqmt.onrender.com/docs
+
+
+
 # ACCESO A LA APP MOVIL
  usuario: 230893@utxicotepec.edu.mx
  contraseña: Pollo123
